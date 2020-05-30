@@ -138,7 +138,7 @@ class UserNotifications extends React.Component {
                 <h2 style={{textAlign:'center'}}>Notifications</h2>
                 <Tabs className="notificationsTab">
                     <TabList>
-                        <Tab>Story invites</Tab>
+                        <Tab>Invites</Tab>
                     </TabList>
 
                     <TabPanel>

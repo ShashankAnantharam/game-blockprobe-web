@@ -953,26 +953,7 @@ class UserBlocksComponent extends React.Component {
                     steps={this.state.tooltipText.addBlocks}
                     run = {this.state.showTooltip.addBlocks}                    
                     />    
-                    <div>
-                        <Button
-                        color="primary"
-                        variant="contained" 
-                        className="addBulkBlockButton" 
-                        onClick={this.createBulkBlock}>
-                            <div>Contribute</div>
-                        </Button>                    
-                    </div>         
-                    
-                    <div>
-                        <Button 
-                        color="primary"
-                        variant="contained"
-                        className="editEntitiesButton entityPaneButtonTooltip" 
-                        onClick={this.openEntityPane}>
-                            <div>Manage story entities</div>
-                        </Button>
-                    </div>                    
-                    
+
                     <div>
                         {Object.keys(this.props.investigationGraph).length > 0?
                             <Button 
@@ -980,7 +961,7 @@ class UserBlocksComponent extends React.Component {
                             variant="contained"
                             className="editEntitiesButton" 
                             onClick={this.openImagePane}>
-                                <div>Manage story images</div>
+                                <div>Manage game images</div>
                             </Button>
                                 :
                             null}
@@ -993,7 +974,7 @@ class UserBlocksComponent extends React.Component {
                             variant="contained"
                             className="editEntitiesButton" 
                             onClick={this.publishStory}>
-                                <div>Publish</div>
+                                <div>Publish game</div>
                             </Button>
                         </div>
                         :
@@ -1012,21 +993,10 @@ class UserBlocksComponent extends React.Component {
                 <div className="contributeOpenTooltipTextContainer">
                 {Object.keys(this.state.successBlocks).length>0?
                         <p className="contributeOpenTooltipText">
-                            Click on the menu (top-left) and choose <a className='tooltip-selection' onClick={this.setDashboardVisualisation}>Dashboard</a> to visualise your contributions. <br/><br/>
                             Click on the menu (top-left) and choose <a className='tooltip-selection' onClick={this.setShareVisualization}>Share</a> to share.<br/><br/>
                         </p>                        
                         :
-                        <div>
-                            {Object.keys(this.state.draftBlocks).length>0?
-                                <p className="contributeOpenTooltipText">
-                                    Click on any block (para) that you just added from the Draft list.
-                                </p>
-                                :
-                                <p className="contributeOpenTooltipText">
-                                    Click on <a className='tooltip-selection' onClick={this.createBulkBlock}>Contribute</a> to add content to your story.
-                                </p>
-                            }
-                        </div>
+                        null
                         }
                 </div>   
         </div>
@@ -1203,13 +1173,7 @@ class UserBlocksComponent extends React.Component {
         let gameUrl = this.state.gameUrlPrefix + this.props.bId;
         return (
             <Paper elevation={6}>
-                <div className='userblocks-share-container'>
-                    <div className='userblocks-share-section-heading'>
-                        Public link to visualize                                             
-                    </div>
-                    <div className="userblocks-share-url-div">
-                        <a href={url} target="_blank" className="userblocks-share-url">{url}</a>
-                    </div>
+                <div className='userblocks-share-container'>                    
                     <div className='userblocks-share-section-heading'>
                         Public link to play game                     
                     </div>

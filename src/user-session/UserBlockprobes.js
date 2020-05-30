@@ -268,7 +268,7 @@ class UserBlockprobesComponent extends React.Component {
                         <label>
                             <TextField 
                                 type="text"
-                                placeholder = "Enter title of your story."
+                                label = "Game title"
                                 variant="outlined"
                                 value={this.state.draftBlockprobe.title}
                                 onChange={(e) => { this.handleChange(e,"title")}}
@@ -463,7 +463,7 @@ class UserBlockprobesComponent extends React.Component {
                 run = {this.state.showToolTips.createStory}                
                   callback = {this.handleCreateStoryJoyrideCallback}
                 />
-                <h2 style={{textAlign:'center'}}>My stories</h2>
+                <h2 style={{textAlign:'center'}}>My games</h2>
                 {this.state.isBlockprobeBeingCreated?
                     <div style={{margin:'auto',width:'50px'}}>
                         <Loader 
@@ -484,7 +484,7 @@ class UserBlockprobesComponent extends React.Component {
                                             variant="contained"
                                             onClick={() => this.addCancelBlockprobe(false)}>
                                             {!this.state.addBlockprobe?
-                                            <div>Create new story</div>
+                                            <div>Create new game</div>
                                             :
                                             <div>Cancel</div>
                                             }
@@ -511,11 +511,7 @@ class UserBlockprobesComponent extends React.Component {
                             <div>
                                     <div style={{padding:'15px'}}>
                                     <p className="emptyListText">
-                                        Click on <span className="emptyListTextEmphasisStory">Create new story</span> and get started.<br/><br/>
-                                        Your work will be saved as <span className="emptyListTextEmphasisStory">stories</span>.<br/>
-                                        If you are a <span className="emptyListTextEmphasisPersona">police officer</span>, the <span className="emptyListTextEmphasisStory">story</span> could be the <span className="emptyListTextEmphasisStoryType">case that you are investigating</span>.<br/>
-                                        If you are a <span className="emptyListTextEmphasisPersona">politician</span>, the <span className="emptyListTextEmphasisStory">story</span> could be your <span className="emptyListTextEmphasisStoryType">policy proposal</span>.<br/>
-                                        If you are a <span className="emptyListTextEmphasisPersona">journalist</span>, the <span className="emptyListTextEmphasisStory">story</span> could be your <span className="emptyListTextEmphasisStoryType">article or investigation</span>.<br/>
+                                        Click on <span className="emptyListTextEmphasisStory">Create new game</span> and get started.<br/><br/>                                        
                                     </p>
                                     </div>
                             </div>                       

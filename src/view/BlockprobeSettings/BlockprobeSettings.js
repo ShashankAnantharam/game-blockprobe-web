@@ -694,7 +694,7 @@ class BlockprobeSettingsComponent extends React.Component {
                             variant="contained"  
                             className="saveBlockProbeSettingsButton" 
                             onClick={(e) => this.toggleDialog(true,"exitBlockprobe")}>
-                            <div>Exit story</div>
+                            <div>Exit game</div>
                         </Button>                                
                     </div>
                 </div>

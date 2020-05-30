@@ -15,19 +15,6 @@ class App extends Component {
       <div className="App">
         <Router>
           <Switch>
-          <Route path="/wall/:userId"  
-                        component={PublicWallComponent}
-              />
-            <Route path="/gameList/:gameListId"  
-                      component={GameListComponent}
-            />
-           <Route path='/gameResults/:gameId'   
-              component={GamifiedResultsWrapper}
-              />
-            <Route path="/:viewType/:bId"  
-                        component={ViewBlockprobePublicWrapper}
-              />           
-
             <Route exact path="/"  
                         component={UserSession}
               />
