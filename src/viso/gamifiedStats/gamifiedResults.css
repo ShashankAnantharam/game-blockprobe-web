@@ -1,0 +1,44 @@
+.gamePerformanceContent{
+    margin-bottom: 2em;
+}
+
+.gamePerformanceHeader{
+    margin-left:1em;
+}
+
+.displayUserGameScoreButton{
+    background:#46237a !important;
+    color:rgb(219, 243, 242) !important;
+    margin-top:0 !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.viewGameResultsOptionsContainer{
+    display:flex; 
+    flex-direction:row;
+    margin-top:0.2em;
+    height:auto;
+}
+
+@media only screen and (min-width: 601px) {
+
+    .gamePerformanceHeader{
+        margin: 0 1% 1% 1%;
+    }
+
+    .input-userId-getScore-container{
+        margin: 0 20px 20px 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .gamePerformanceHeader{
+        margin: 0 20px 20px 20px;
+    }
+
+    .input-userId-getScore-container{
+        margin: 0 20px 20px 20px;
+    }
+}

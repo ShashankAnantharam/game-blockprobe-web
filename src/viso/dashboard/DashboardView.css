@@ -1,0 +1,84 @@
+.dashboard-section-heading{
+    margin-top:30px; 
+    font-weight:500;
+    margin-left:10px; 
+    font-size:1.3em;
+}
+
+.graph-heading{
+    margin-bottom:10px; 
+}
+
+.timeline-heading{
+    margin-bottom:20px;
+}
+
+.tooltips-dashboard{
+    color:rgb(0, 76, 78);
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.soundSettingsbutton{
+    background: #46237a !important;
+    color: white !important;
+    margin-bottom: 0.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+
+.gamifiedDashboardOptionsContainer{
+    display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+    .graph-heading{
+        margin-left: 20px;
+    }
+    
+    .timeline-heading{
+        margin-left: 20px; 
+    }
+
+    .uniformMarginLeft{
+        margin-left: 20px;
+    }
+}
+
+ @media only screen and (min-width: 601px) {
+    .graph-heading{
+        margin-left: 1%;
+    }
+    
+    .timeline-heading{
+        margin-left: 1%; 
+    }
+
+    .uniformMarginLeft{
+        margin-left: 1%;
+    }
+}
+
+/*
+ *  SCROLLBAR STYLE for graph-selected-block-list
+ */
+
+ #wallPost-selected-post-list::-webkit-scrollbar-track
+ {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     border-radius: 10px;
+     background-color: #F5F5F5;
+ }
+ 
+ #wallPost-selected-post-list::-webkit-scrollbar
+ {
+     width: 5px;
+     background: transparent;
+ }
+ 
+ #wallPost-selected-post-list::-webkit-scrollbar-thumb
+ {
+     border-radius: 10px;
+     background-color: #555;
+ }

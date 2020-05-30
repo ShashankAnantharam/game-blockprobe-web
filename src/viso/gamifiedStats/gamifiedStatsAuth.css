@@ -1,0 +1,14 @@
+.StatsAuthLoginHeader{
+    font-size:16px;
+}
+
+.StatsAuthLoginContainer{
+    padding: 10px;
+    display: inline-block;
+}
+
+.StatsAuthTitle{
+    margin:10px;
+    font-size: 16px;
+    font-weight: 600;
+}

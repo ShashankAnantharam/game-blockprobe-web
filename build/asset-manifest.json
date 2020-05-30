@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e3ca87e2.chunk.css",
+    "main.js": "/static/js/main.348bcdfd.chunk.js",
+    "main.js.map": "/static/js/main.348bcdfd.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3613406d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3613406d.js.map",
+    "xlsx.js": "/static/js/xlsx.c2211b30.chunk.js",
+    "xlsx.js.map": "/static/js/xlsx.c2211b30.chunk.js.map",
+    "static/css/3.77a19723.chunk.css": "/static/css/3.77a19723.chunk.css",
+    "static/js/3.2bc22947.chunk.js": "/static/js/3.2bc22947.chunk.js",
+    "static/js/3.2bc22947.chunk.js.map": "/static/js/3.2bc22947.chunk.js.map",
+    "static/js/4.d906484e.chunk.js": "/static/js/4.d906484e.chunk.js",
+    "static/js/4.d906484e.chunk.js.map": "/static/js/4.d906484e.chunk.js.map",
+    "static/js/5.d612bbac.chunk.js": "/static/js/5.d612bbac.chunk.js",
+    "static/js/5.d612bbac.chunk.js.map": "/static/js/5.d612bbac.chunk.js.map",
+    "static/js/6.3997587b.chunk.js": "/static/js/6.3997587b.chunk.js",
+    "static/js/6.3997587b.chunk.js.map": "/static/js/6.3997587b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.fca296c6fa692a82d08d95f415bfa874.js": "/precache-manifest.fca296c6fa692a82d08d95f415bfa874.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/3.77a19723.chunk.css.map": "/static/css/3.77a19723.chunk.css.map",
+    "static/css/main.e3ca87e2.chunk.css.map": "/static/css/main.e3ca87e2.chunk.css.map",
+    "static/js/3.2bc22947.chunk.js.LICENSE.txt": "/static/js/3.2bc22947.chunk.js.LICENSE.txt",
+    "static/js/6.3997587b.chunk.js.LICENSE.txt": "/static/js/6.3997587b.chunk.js.LICENSE.txt",
+    "static/media/Journalist.jpg": "/static/media/Journalist.fa9d5e95.jpg",
+    "static/media/Teacher.jpg": "/static/media/Teacher.08d8cb9c.jpg",
+    "static/media/UploadIcon.svg": "/static/media/UploadIcon.1cedb6e9.svg",
+    "static/media/lawmaker.jpg": "/static/media/lawmaker.66d4da4e.jpg",
+    "static/media/logo.png": "/static/media/logo.409a67ba.png",
+    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg",
+    "static/media/try_again.mp3": "/static/media/try_again.c4b2f20c.mp3",
+    "static/media/well_done.mp3": "/static/media/well_done.ee86f2ec.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3613406d.js",
+    "static/css/3.77a19723.chunk.css",
+    "static/js/3.2bc22947.chunk.js",
+    "static/css/main.e3ca87e2.chunk.css",
+    "static/js/main.348bcdfd.chunk.js"
+  ]
+}

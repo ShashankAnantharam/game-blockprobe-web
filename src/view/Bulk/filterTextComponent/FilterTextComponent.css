@@ -1,0 +1,51 @@
+.filterTextComponent{
+    margin-left: 1em;
+    margin-bottom: 20px;
+}
+
+.filterTextDelimiterButton{
+    background:rgb(2, 117, 21);
+    color:rgb(219, 243, 242);
+    margin-top:0;
+    margin-right: 25px;
+    size:2.6em;
+    border:none;
+}
+
+.filterTextDelimiterButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.undoFilterTextDelimiterButton{
+    background:rgb(236, 117, 117);
+    color:rgb(219, 243, 242);
+    margin-top:0;
+    size:2.6em;
+    border:none;
+}
+
+.undoFilterTextDelimiterButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+
+.filterTextUndoAction{
+    color: blue;
+    cursor: pointer;
+}
+
+.filterTextDelimText{
+    color:red;
+}
+
+.filterTextUndoOperation{
+    margin: 0;
+    margin-top: 15px; 
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.filterTextOptionsContainer{
+    display: flex;
+}

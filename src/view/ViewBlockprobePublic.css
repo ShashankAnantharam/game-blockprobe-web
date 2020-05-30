@@ -1,0 +1,49 @@
+.blockprobe-header{
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top:-20px;
+}
+
+.blockprobe-body{
+    margin-top: 4em;
+}
+
+.menu-button{
+    background:rgb(2, 1, 54);
+    border: none;
+    border-radius: 10px;
+    margin-left: 6px;
+    size:4em;
+    color:rgb(219, 243, 242);
+}
+
+@media only screen and (max-width: 600px) {
+    .right-sidebar{
+        width: 75vw;
+    }
+
+    .left-sidebar{
+        width: 75vw;
+    }
+
+    .blockprobe-header{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+ 
+}
+
+@media only screen and (min-width: 601px) {
+    .right-sidebar{
+        width: 45vw;
+    }
+
+    .left-sidebar{
+        width: 40vw;
+    }
+
+    .blockprobe-header{
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}

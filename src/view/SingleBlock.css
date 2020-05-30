@@ -1,0 +1,52 @@
+.user-block-entity{
+    border-radius: 20px; 
+    padding: 10px;
+    background-color: rgb(117, 106, 214);
+    margin-left: 10px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    display:inline-block;
+    font-size:0.75em;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+}
+
+.user-block-title{
+    color:darkcyan;
+    margin-left: 9px; 
+    margin-top: 9px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.user-block-text{
+    text-align: justify;
+    margin-left: 9px; 
+}
+
+.user-block-div{
+    border: 1px solid rgb(204, 234, 236);
+    margin-bottom: 11px;
+    margin-right:8px;
+    box-shadow: 5px 10px darkcyan;
+    border-radius:10px;
+    background: rgb(204, 234, 236);
+    cursor: pointer;
+}
+
+.user-block-color-MODIFY{
+    background: rgb(250, 236, 158);
+}
+
+.user-block-color-ADD{
+    background: rgb(184, 250, 158);
+}
+
+.user-block-color-multiselect-UNSELECTED{
+    background: rgb(209, 209, 209);
+}
+
+.user-block-color-multiselect-SELECTED{
+    background: rgb(114, 154, 240);
+}

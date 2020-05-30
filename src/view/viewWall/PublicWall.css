@@ -1,0 +1,11 @@
+.noWallInfoMessage{
+    margin-top:30px; 
+    font-weight:500;
+    margin-left:10px; 
+    font-size: 20px;
+    margin-bottom:10px; 
+    text-align: center;
+    background: #fcff44;
+    opacity: 0.4; 
+}
+

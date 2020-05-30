@@ -1,0 +1,28 @@
+.playGameListItembutton{
+    background:#46237a !important;
+    color:rgb(219, 243, 242) !important;
+    margin-bottom: 0.5em !important;
+    size:2.6em !important;
+}
+
+.viewResultGameListItembutton{
+    background:#46237a !important;
+    color:rgb(219, 243, 242) !important;
+    margin-bottom: 0.5em !important;
+    margin-left: 0.5em !important;
+    size:2.6em !important;
+}
+
+.singleGameElementContainer{
+    box-shadow: 2px 2px 10px 2px rgb(206, 204, 204) !important;
+    border: 0.25px black solid;
+    background: #3ddc97;
+    margin: 10px 10px 10px 0;
+    padding: 0 10px 10px 10px;
+}
+
+.gameViewContainer{
+    height: 80vh;
+    width: 100%;
+    background: white;
+}

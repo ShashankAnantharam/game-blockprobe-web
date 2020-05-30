@@ -1,0 +1,38 @@
+.entityOptionsContainer{
+    display: flex;
+    word-wrap: break-word;
+}
+
+.entityEditLabelContainer{
+    margin-bottom:1em;
+}
+
+.manageSingleEntityTitle{
+    word-wrap: break-word;
+}
+
+.renameEntityButton{
+    background:rgb(2, 1, 46) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-right:1em !important;
+    margin-top:0 !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.renameEntityButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.deleteEntityButton{
+    background:rgb(102, 4, 4) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-right:1em !important;
+    margin-top:0 !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.deleteEntityButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}

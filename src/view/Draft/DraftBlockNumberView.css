@@ -1,0 +1,92 @@
+.draftBlockNumberViewContainer{
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.draftBlockNumberViewDiv{
+    margin:6px;
+}
+
+.draft-number-edit-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.draft-number-button-container{
+    display:flex; 
+    flex-direction:row;
+    margin-top:0;
+    margin-bottom:1em;
+    height:auto;
+}
+
+.removeNumberButton{
+    background:rgb(2, 1, 54);
+    color:rgb(219, 243, 242);
+    margin-left:3em;
+    margin-top:0em;
+    size:2.6em;
+    border:none;
+}
+
+.removeNumberButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.updateNumberButton{
+    background:rgb(2, 1, 54);
+    color:rgb(219, 243, 242);
+    margin-left:0;
+    margin-top:0;
+    size:2.6em;
+    border:none;
+}
+
+.updateNumberButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.draft-number-value-edit{
+    max-width: 30%;
+    margin:3px;
+}
+
+.draft-number-key-edit{
+    width: 60%;
+    margin:3px;
+}
+
+.draftBlockNumberViewKey{
+    font-size: 13px;
+    word-wrap: break-word;
+}
+
+.draftBlockNumberViewValue{
+    font-size: 17px;
+    color: magenta;
+    word-wrap: break-word;
+}
+
+@media only screen and (max-width: 600px) {
+    .draft-number-value-edit{
+        max-width: 80%;
+    }
+    
+    .draft-number-key-edit{
+        max-width: 80%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .draft-number-value-edit{
+        max-width: 180px;
+        margin-left: 6px;
+    }
+    
+    .draft-number-key-edit{
+        max-width: 180px;
+        margin-right: 6px;
+    }
+}

@@ -1,0 +1,64 @@
+.addBlockprobeButton{
+    background:rgb(2, 1, 54);
+    color:rgb(219, 243, 242);
+    margin-left: 1em !important;
+    margin-top:0 !important;
+    margin-bottom: 0.5em !important;
+    size:2.6em;
+    border:none;
+}
+
+.addBlockprobeButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.emptyListText{
+    font-size: 20px; 
+    color: grey;
+}
+
+.emptyListTextEmphasisStory{
+    color: blue;
+    font-weight: 600;
+}
+
+.emptyListTextEmphasisPersona{
+    color: rgb(115, 3, 143);
+    font-weight: 600;
+}
+
+.emptyListTextEmphasisStoryType{
+    color: rgb(5, 56, 77);
+    font-weight: 600;
+}
+
+.startTooltipsButton{
+    background:rgb(2, 1, 54);
+    color:rgb(219, 243, 242);
+    margin-left:1em !important;
+    margin-top:0 !important;
+    margin-bottom: 0.5em !important;
+    size:2.6em;
+    border:none;
+}
+
+.startTooltipsButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.submitBlockprobeButton{
+    background:green !important;
+    color:rgb(219, 243, 242);
+    margin-left:1em !important;
+    margin-top:0 !important;
+    size:2.6em;
+    border:none;
+}
+
+.submitBlockprobeButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.blockprobeListTooltip{
+    margin-bottom: 40px !important;
+}

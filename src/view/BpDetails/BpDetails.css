@@ -1,0 +1,38 @@
+.edit-bpDetail-button{
+    background:rgb(2, 1, 54);
+    color:rgb(219, 243, 242);
+    margin-left:1em !important;
+    margin-bottom:1em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.edit-bpDetail-button:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.submit-bpDetail-button{
+    background:rgb(12, 52, 231);
+    color:rgb(219, 243, 242);
+    margin-left:1em !important;
+    margin-top:0 !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.submit-bpDetail-button:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.close-bpDetail-button{
+    background:rgb(12, 52, 231);
+    color:rgb(219, 243, 242);
+    margin-left:1em !important;
+    margin-top:0 !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.close-bpDetail-button:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}

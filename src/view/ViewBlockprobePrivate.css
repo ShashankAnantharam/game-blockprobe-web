@@ -1,0 +1,88 @@
+.blockprobe-header{
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top:-5px;
+}
+
+.blockprobe-body{
+    margin-top: 4em;
+}
+
+.menu-button{
+    background:rgb(3, 1, 129);
+    border: none;
+    border-radius: 10px;
+    margin-left: 6px;
+    size:4em;
+    color:rgb(219, 243, 242);
+    transition: 1s;
+}
+
+.menu-button:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.edit-bpTitle-button{
+    background:rgb(2, 1, 54);
+    color:rgb(219, 243, 242);
+    margin-left:1em;
+    margin-bottom:1em;
+    size:2.6em;
+    border:none;
+}
+
+.edit-bpTitle-button:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.sync-button{
+    background:rgb(3, 1, 129);
+    border: none;
+    border-radius: 10px;
+    margin-left: 6px;
+    size:4em;
+    color:rgb(219, 243, 242);
+    transition: 1s;
+}
+
+.sync-button:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.blockprobe-options-container{
+    display:flex; 
+    flex-direction:row;
+    margin-top:1em;
+    margin-bottom:1em;
+    height:auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .right-sidebar{
+        width: 75vw;
+    }
+
+    .left-sidebar{
+        width: 75vw;
+    }
+
+    .blockprobe-header{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .right-sidebar{
+        width: 45vw;
+    }
+
+    .left-sidebar{
+        width: 40vw;
+    }
+
+    .blockprobe-header{
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}

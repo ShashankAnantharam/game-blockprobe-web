@@ -1,0 +1,56 @@
+.translateTextContainer{
+    margin-left: 1em;
+}
+
+
+.translatePaneButton{
+    margin-right: 1.5em;
+    height: 3.6em;
+}
+
+.submitPaneButton{
+    background:rgb(2, 117, 21);
+    color:rgb(219, 243, 242);
+    margin-right: 1.5em;
+    height: 3.6em;
+}
+
+.undoPaneButton{
+    background:rgb(236, 117, 117);
+    color:rgb(219, 243, 242);
+    margin-right: 1.5em;
+    height: 3.6em;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .translatepane-filter-container{
+        margin-bottom:1em;
+    }
+
+    .translatepane-dropdown-container{
+        width:80%; 
+        height:auto; 
+        font-size:1.4em; 
+        padding-top:0.5em;
+        margin-right: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+
+    .translatepane-filter-container{
+        display:flex; 
+        flex-direction:row;
+        margin-bottom:1em;
+        height:auto;
+    }
+
+    .translatepane-dropdown-container{
+        width:35%; 
+        height:auto; 
+        font-size:1.4em; 
+        margin-top:0.5em;
+        margin-right: 1.5em;
+    }
+}

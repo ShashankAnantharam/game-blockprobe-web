@@ -1,0 +1,27 @@
+.addTimeTitle{
+    word-wrap: break-word;
+}
+
+.confirmTimeButton{
+    background:rgb(2, 1, 46) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-right:1em !important;
+    margin-top:10px !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.confirmTimeButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.timeEntityMessage{
+    font-size: 12px;
+    color: red;
+    margin-top:10px;
+    margin-right:1em
+}
+
+.addTimelineBlockTextContainer{    
+    margin-right:1em;
+}

@@ -1,0 +1,42 @@
+.gameListPrivateOptionsContainer{
+    display:flex;
+    margin-top:20px;
+    margin-left: 1em;
+}
+
+.newGamePrivateOptionsContainer{
+    display:flex;
+    margin-top:20px;
+}
+
+.addGameButton{
+    margin-right:1em !important;
+    margin-top:0 !important;
+    margin-bottom: 0.5em !important;
+    size:2.6em;
+    border:none;
+}
+
+.returnToGameListButton{
+    margin-left:1em !important;
+    margin-top:0 !important;
+    margin-bottom: 0.5em !important;
+    size:2.6em;
+    border:none;
+}
+
+.newGameFormContainer{
+    margin-left: 1em;
+}
+
+.shareUrlContainer{
+    margin-left: 1em;
+    margin-bottom: 20px;
+}
+
+.shareUrlDiv{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80vw;
+}

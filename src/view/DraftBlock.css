@@ -1,0 +1,238 @@
+.draft-block-container{
+    background: rgb(216, 216, 216);
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin: 1em 1em 1em 1em;
+    box-shadow: 2px 2px 10px 2px rgb(206, 204, 204) !important;
+    border: 0.25px black solid;
+}
+
+.draft-block-color-ADD{
+    background: rgb(184, 250, 158);
+}
+
+.draft-block-color-MODIFY{
+    background: rgb(250, 236, 158);
+}
+
+.openTooltipTextContainer{
+    margin: 0; 
+    border-radius: 5px;
+    font-size:13px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.draftBlocksPaneTitle{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.draft-box-datetime-container{
+    width:75%; 
+    height:auto; 
+    font-size:1.4em; 
+    margin-left:1em;
+    margin-top:0.5em;
+}
+
+.draft-box-entity-dropdown-container{
+    width:75%; 
+    height:auto; 
+    font-size:1.4em; 
+    margin-left:1em;
+    margin-bottom:2em;
+    margin-top:0.5em;
+}
+
+.draft-box-evidence-container{
+    width:75%; 
+    height:auto; 
+    font-size:1.4em; 
+    margin-left:1em;
+    margin-top:0.5em;
+    border: solid 1px darkgrey;
+}
+
+.draft-box-number-container{
+    width:75%; 
+    height:auto; 
+    font-size:1.4em; 
+    margin-left:1em;
+    margin-top:0.5em;
+    border: solid 1px darkgrey;
+}
+
+.addDateTimeButton{
+    background:rgb(2, 1, 54) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-top:0 !important;
+    size:0.6em !important;
+    border:none;
+}
+
+.addDateTimeButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.addEntityButton{
+    background:rgb(2, 1, 54) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left:6em !important;
+    margin-top:0 !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.addEntityButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.addEvidenceButton{
+    background:rgb(2, 1, 54) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left:0.5em !important;
+    margin-top:1.5em !important;
+    margin-bottom: 0.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.addEvidenceButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.addNumberButton{
+    background:rgb(2, 1, 54) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left:0.5em !important;
+    margin-top:1.5em !important;
+    margin-bottom: 0.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.addNumberButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.draft-add-new-entity-container{
+    display:flex; 
+    flex-direction:row;
+    margin-top:1em;
+    margin-bottom:5px;
+    height:auto;
+}
+
+.draft-options-container{
+    display:flex; 
+    flex-wrap: wrap;
+    flex-direction:row;
+    margin-top:1em;
+    margin-bottom:1em;
+    height:auto;
+}
+
+.commitBlockButton{
+    background:rgb(2, 100, 32) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left:1.5em !important;
+    margin-top:1.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.commitBlockButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.buttonDraftGeneral{
+    font-weight: bold;
+}
+
+.saveBlockButton{
+    background:rgb(12, 52, 231) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left:1.5em !important;
+    margin-top:1.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.saveBlockButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.convertToBlocksButton{
+    background:rgb(2, 100, 32) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left:1.5em !important;
+    margin-top:1.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.convertToBlocksButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.cancelBlockBackButton{
+    background:rgb(78, 78, 78) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left:1.5em !important;
+    margin-top:1.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.cancelBlockBackButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.saveDraftBulkBlockprobeButton{
+    background:rgb(12, 52, 231) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left:1.5em !important;
+    margin-top:1.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.saveDraftBulkBlockprobeButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.deleteBlockButton{
+    background:rgb(231, 12, 12) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left:1.5em !important;
+    margin-top:1.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.deleteBlockButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.submitBlockButton{
+    background:rgb(12, 52, 231) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left:1.5em !important;
+    margin-top:1.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.submitBlockButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.tooltips-draft{
+    color: rgb(255, 22, 138);
+    margin-left: 2px;
+    cursor: pointer;
+}

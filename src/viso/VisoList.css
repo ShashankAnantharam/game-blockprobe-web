@@ -1,0 +1,9 @@
+.list-item.selected{
+    background: darkcyan;
+    color: white;
+}
+
+.list-item{
+    background: white;
+    color: darkcyan;
+}

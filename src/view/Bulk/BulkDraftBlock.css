@@ -1,0 +1,84 @@
+.bulkEditBlockContainer{
+    max-height: 1150px;
+    overflow-y: auto !important;
+}
+
+.bulk-draft-options-container{
+    display:flex; 
+    flex-direction:row;
+    margin-bottom:1em;
+    height:auto;
+}
+
+.bulkDraftBlocksPaneContainer{
+    border: 0.5px solid darkgrey;
+    margin: 0 5px 20px 5px;
+    padding: 8px 0 8px 0;
+}
+
+.bulkDraftBlocksPaneTitle{
+    margin-left: 1em;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tooltips-bulkdraft{
+    color:rgb(0, 76, 78);
+    cursor: pointer;
+}
+
+.tooltips-list-bulkdraft{
+    font-size: 14px; 
+    color: rgb(0, 76, 78);
+}
+
+.tooltips-list-bulkdraft > li{
+    margin-bottom: 6px;
+}
+
+.processingDraftBlockText{
+    font-size: 20px; 
+    color: grey;
+}
+
+.advancedImageOption{
+    color:rgb(219, 243, 242) !important;
+    margin-left:1.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.advancedImageOption:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.advancedImageOptionSelected{
+    background:rgb(12, 52, 231) !important;
+    opacity: 1 !important;
+}
+
+.advancedImageOptionUnselected{
+    background:rgb(66, 93, 209) !important;
+    opacity: 0.7 !important;
+}
+
+.bulkEdit-nonPreview{
+    width: 90vw;
+}
+
+.bulkPreview-nonPreview{
+    display: none;
+}
+
+@media only screen and (min-width: 601px) {
+    .bulkEdit-preview{
+        width: 45vw;
+    }   
+}
+
+@media only screen and (max-width: 600px) {
+    .bulkEdit-preview{
+        width: 95vw;
+    }
+}

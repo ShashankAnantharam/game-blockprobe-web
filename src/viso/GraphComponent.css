@@ -1,0 +1,373 @@
+.copyBlockText{
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(117, 106, 214);
+    color: white;
+    font-weight:700;
+    padding: 5px;
+}
+
+.graph-block-entity{
+    border-radius: 20px; 
+    padding: 10px;
+    background-color: rgb(117, 106, 214);
+    margin-left: 10px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    display:inline-block;
+    font-size:0.75em;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+}
+
+.graph-block-list-title-icon{
+    height: 25px !important;
+    margin-bottom: -5px;
+    margin-left: 1%;
+}
+
+.displayNone{
+    display: none !important;
+}
+
+.graph-block-title{
+    color:darkcyan;
+    margin-left: 9px;
+    margin-right: 9px; 
+    margin-top: 9px;
+    margin-bottom: 2px !important;
+    font-weight: bold;
+}
+
+.graph-block-text{
+    text-align: justify;
+    margin-top: 2px !important;
+    margin-left: 9px; 
+    margin-right: 9px;
+}
+
+.graph-content-number-key{
+    color: rgb(49, 49, 49);
+}
+
+.graph-content-number-value{
+    color: rgb(60, 60, 250);
+}
+
+.graph-block-div{
+    margin-bottom: 8px;
+    margin-top:0px;
+    box-shadow: 2px 2px 10px 2px grey;
+    border-radius:3px;
+    padding: 5px;
+    background: #ededee;
+    border: 1px lightgrey solid;
+    cursor: pointer;
+    transition: padding 0.5s;
+}
+
+.graph-block-para-div{
+    transition: 0.5s;
+    padding: 5px;
+}
+
+.graph-block-div:hover{
+    background: #efd1f8;  
+    padding: 10px 5px 10px 5px;  
+}
+
+.graph-block-para-div:hover{
+    background: #efd1f8;  
+}
+
+.graph-main{
+    height: 550px;  
+    border: 1px solid black;
+}
+
+.graph-block-list{
+    border: 1px solid rgb(0, 0, 0);
+    border-bottom: none;
+    padding-left:0;
+    padding-right:0;
+}
+
+.graph-block-list-title{
+    font-weight: 600;
+    padding: 2px;
+    text-align: center;
+    background-color: #c0cff8;
+    transition: 0.5s;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+.graph-block-list-title:hover{
+    background-color: #83a2f7;
+}
+
+.graph-block-list-sound{
+    font-weight: 600;
+    padding: 2px;
+    text-align: center;
+    background-color: #585858;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+.graph-block-list-sound:hover{
+    background-color: #353535;
+}
+
+.soundIcon{
+    margin: 0 8px 0 8px;
+}
+
+.graph-block-list-container{
+    overflow-y:scroll;
+    overflow-x: none;
+    max-height: 80vh;
+}
+
+.graph-block-evidence-container{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.graph-block-evidence{
+    margin-bottom: 3%;
+}
+
+.graph-block-evidence-image{
+    border: 0.5px black solid;
+    width: 100%;
+
+}
+
+.copiedTextContainer{
+    margin-left: 1em;
+}
+
+.copiedTextValue{
+    font-size:12px;
+}
+
+.gamifiedNodeDisplay{
+    display: flex;
+    word-wrap: break-word;
+    flex-wrap: wrap;
+}
+
+.gamifiedNodeSelectionsTitle{
+    font-size: 16px;
+    margin: 10px 10px 10px 0;
+}
+
+.gameMessage{
+    font-size: 16px !important;
+    text-align: center;
+}
+
+.scoreText{
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.scoreVal{
+    color: #556efd;
+    font-size: 24px;
+}
+
+.totalScoreVal{
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.gamified-block-entity{
+    border-radius: 20px; 
+    padding: 10px;
+    background-color: #556efd;
+    margin-right: 10px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    display:inline-block;
+    font-size:0.75em;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+.gamified-graph-block-list-title{
+    font-weight: 600;
+    padding: 2px;
+    text-align: center;
+    background-color: #3ddc97;
+    transition: 0.5s;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+.scoreAmchartContainer{
+    width: 100%;
+    height: 80px;
+}
+
+.stopGamebutton{
+    background:#46237a !important;
+    color:rgb(219, 243, 242) !important;
+    margin-bottom: 0.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+@media only screen and (min-width: 601px) {
+
+    .specialViewMargin{
+        margin: 0 1% 1% 1%;
+    }
+
+    .graph-main{
+        margin: 0 1% 1% 1%;
+    }
+
+    .graph-block-list{
+        margin: 1% 1% 0 1%;
+    }
+        
+    .graph-container{
+        display:flex; 
+        flex-direction:row;
+        margin-left:20px;
+        cursor: pointer;
+    }
+
+    .filter-container{
+        display:flex; 
+        flex-direction:row;
+        margin-top:15px;
+        margin-bottom:1em;
+        height:auto;
+    }
+
+    .find-connections-dropdown-container{
+        width:35%; 
+        height:auto; 
+        font-size:1.4em; 
+        margin-left:20px;
+        margin-top:0.5em;
+    }
+
+    .dropdown-container{
+        width:75%; 
+        height:auto; 
+        font-size:1.4em; 
+        margin-left:20px;
+        margin-top:0.5em;
+    }
+
+    .filterButton{
+        margin-left:6em;
+        margin-top:0.5em;
+        height:3.6em;
+    }
+
+    .graph-block-evidence{
+        width: 30%;
+        margin-left: 5%; 
+        margin-right: 5%;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .scoreAmchartContainer{
+        display: none;
+    }
+
+    .specialViewMargin{
+        margin: 0 20px 20px 20px;
+    }
+
+    .graph-main{
+        margin: 0 20px 20px 20px;
+    }
+
+    .graph-block-list{
+        margin: 20px 20px 0 20px;
+    }
+
+    .only-large-screen{
+        display: none;
+    }
+
+    .graph-container{
+        margin-left:20px;
+        cursor: pointer;
+    }
+
+
+    .filter-container{
+        margin-top:15px;
+        margin-bottom:1em;
+        margin-left:20px;
+    }
+
+    .find-connections-dropdown-container{
+        width:80%; 
+        height:auto; 
+        font-size:1.4em; 
+        padding-top:0.5em;
+    }
+
+    .dropdown-container{
+        width:75%; 
+        height:auto; 
+        font-size:1.4em; 
+        padding-top:0.5em;
+    }
+
+    .filterButton{
+        margin-top:0.5em;
+        height:3.6em;
+    }
+
+    .graph-block-evidence{
+        width: 80%;
+        margin-left: 10%; 
+        margin-right: 10%;
+    }
+}
+
+/*
+ *  SCROLLBAR STYLE for graph-selected-block-list
+ */
+
+ #graph-selected-block-list::-webkit-scrollbar-track
+ {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     border-radius: 10px;
+     background-color: #F5F5F5;
+ }
+ 
+ #graph-selected-block-list::-webkit-scrollbar
+ {
+     width: 5px;
+     background: transparent;
+ }
+ 
+ #graph-selected-block-list::-webkit-scrollbar-thumb
+ {
+     border-radius: 10px;
+     background-color: #555;
+ }

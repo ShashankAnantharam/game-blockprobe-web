@@ -1,0 +1,82 @@
+.wallPostTitle{
+    color: white;
+    background: #03035f;
+    opacity: 0.8;
+    padding: 10px;
+    font-size: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.wallPostVisoContainer{
+    height: 550px;    
+    width: 100%;
+    text-align: center;
+}
+
+.wallPostViso{
+    height: 100%;
+    width: 100%;
+    background: white;
+    border: black 1px solid;
+}
+
+.visualizeWallBpButton{
+    background:rgb(2, 1, 54) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-bottom: 0.5em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.summaryChangeWallbutton{
+    background:rgb(116, 114, 4) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left: 1em !important;
+    margin-bottom: 1em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.summarySaveWallbutton{
+    background:rgb(25, 109, 8) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left: 1em !important;
+    margin-bottom: 1em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.summaryCancelWallbutton{
+    background:rgb(248, 64, 64) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-left: 1em !important;
+    margin-bottom: 1em !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.wallPostBody{
+    padding: 15px;    
+    padding-top: 5px;
+}
+
+.wallPostContainer{
+    margin: 1em;
+    background: #cad8da;
+    opacity: 0.8;
+    border-radius: 5px;    
+    box-shadow: 2px 2px 10px 2px grey;
+}
+
+.wallPostSummary{
+    margin-left: 1em;
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+.wallPostSummaryPrompt{
+    margin-left: 1em;
+    font-size: 16px;
+    font-style: italic;
+}

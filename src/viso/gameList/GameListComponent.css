@@ -1,0 +1,23 @@
+.singleGameListItemContainer{
+    margin:0 1em 1em 1em;
+}
+
+.gameListTitle{
+    margin-left: 1em;
+    margin: 1em;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.gameVideoLink{
+    margin: 1em;
+}
+
+.gameVideoContainer{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.videoPadding{
+    padding:10px;
+}

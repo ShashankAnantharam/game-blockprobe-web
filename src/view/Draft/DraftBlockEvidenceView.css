@@ -1,0 +1,33 @@
+.draft-evidence-button-container{
+    display:flex; 
+    flex-direction:row;
+    margin-top:0;
+    margin-bottom:1em;
+    height:auto;
+}
+
+.removeEvidenceButton{
+    background:rgb(2, 1, 54);
+    color:rgb(219, 243, 242);
+    margin-left:3em;
+    margin-top:0em;
+    size:2.6em;
+    border:none;
+}
+
+.removeEvidenceButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.updateEvidenceButton{
+    background:rgb(2, 1, 54);
+    color:rgb(219, 243, 242);
+    margin-left:0;
+    margin-top:0;
+    size:2.6em;
+    border:none;
+}
+
+.updateEvidenceButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}

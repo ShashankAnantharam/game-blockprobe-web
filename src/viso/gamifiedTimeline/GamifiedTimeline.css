@@ -1,0 +1,110 @@
+.timesViewGrid{
+    border: 1px black solid;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.timelineTimesContainer{
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.singleTimeOption{
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background: #556efd !important;
+    color: white !important;
+    font-weight:  bold;
+    text-align: center;
+}
+
+.singleTimeOption:hover{
+    background: #3ddc97 !important
+}
+
+.horizontallyCentered{
+    margin: 0 auto !important;
+}
+
+.width-40{
+    width: 40px;
+}
+
+.gameTimelineMessage{
+    font-size: 16px !important;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.gamifiedTimelineBlockContainer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.timelineScoreVal{
+    color: #46237a;
+    font-size: 24px;
+}
+
+@media only screen and (min-width: 601px) {
+
+    .specialViewMargin{
+        margin: 0 1% 1% 1%;
+    }
+
+    .gamifiedTimelineBlockNav{
+        font-size: 40px !important;
+        transition: 0.5s !important;
+      }  
+    
+    .gamifiedTimelineBlockNav:hover{
+        font-size: 60px !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .specialViewMargin{
+        margin: 0 20px 20px 20px;
+    }
+
+    .gamifiedTimelineBlockNav{
+        font-size: 20px !important;
+      }  
+}
+
+@media only screen and (min-width: 801px) {
+    .gamifiedTimelineBlock{
+        width: 40% !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .gamifiedTimelineBlock{
+        width: 80% !important;
+    }
+}
+
+/*
+ *  SCROLLBAR STYLE for gamifiedTimesViewGrid
+ */
+
+ #gamifiedTimesViewGrid::-webkit-scrollbar-track
+ {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     border-radius: 10px;
+     background-color: #F5F5F5;
+ }
+ 
+ #gamifiedTimesViewGrid::-webkit-scrollbar
+ {
+     width: 5px;
+     background: transparent;
+ }
+ 
+ #gamifiedTimesViewGrid::-webkit-scrollbar-thumb
+ {
+     border-radius: 10px;
+     background-color: #555;
+ }

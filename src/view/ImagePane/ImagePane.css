@@ -1,0 +1,74 @@
+
+
+.imagePaneButton{
+    margin-right: 1.5em !important;
+    height: 3.6em !important;
+    margin-top: 0.5em !important;
+}
+
+.removeImageButton{
+    padding: 6px 23px;
+    background: #3f4257;
+    border-radius: 30px;
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    margin: 10px 0;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .imagepane-filter-container{
+        margin-top:4em;
+        margin-bottom:1em;
+        margin-left: 1em;
+    }
+
+    .imagepane-dropdown-container{
+        width:80%; 
+        height:auto; 
+        font-size:1.4em; 
+        padding-top:0.5em;
+        margin-right: 1.5em;
+    }
+
+    .imagepane-url-container{
+        width:80%; 
+        height:auto; 
+        font-size:1.4em; 
+        padding-top:0.5em;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+
+    .imagepane-filter-container{
+        display:flex; 
+        flex-direction:row;
+        margin-top:4em;
+        margin-bottom:1em;
+        height:auto;
+    }
+
+    .imagepane-dropdown-container{
+        width:35%; 
+        height:auto; 
+        font-size:1.4em; 
+        margin-left:1em;
+        margin-top:0.5em;
+        margin-right: 1.5em;
+    }
+
+    .imagepane-url-container{
+        width:45%; 
+        height:auto; 
+        font-size:1.4em; 
+        margin-left:1em;
+        margin-top:1.2em;
+    }
+
+}
