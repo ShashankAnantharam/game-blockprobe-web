@@ -28,6 +28,7 @@ import BpDetail from './BpDetails/BpDetails';
 import * as Utils from '../common/utilSvc';
 import * as DbUtils from '../common/dbSvc';
 import { utils } from '@amcharts/amcharts4/core';
+import GamifiedDashboardViewComponent from '../viso/dashboard/GamifiedDashboardView';
 
 class ViewBlockprobePrivateComponent extends React.Component {
 
@@ -1024,7 +1025,7 @@ class ViewBlockprobePrivateComponent extends React.Component {
         else if(this.state.selectedVisualisation == "dashboard"){
             return(
                 <div style={{marginBottom: '40px'}}>
-                    <DashboardViewComponent
+                    <GamifiedDashboardViewComponent
                         summaryBlocks = {this.state.summaryList}
                         blockTree={this.state.blockTree} 
                         investigationGraph={this.state.investigationGraph}

@@ -9,6 +9,7 @@ import GroupIcon from '@material-ui/icons/Group';
 import BuildIcon from '@material-ui/icons/Build'; 
 import CreateIcon from '@material-ui/icons/Create'; 
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 import ShareIcon from '@material-ui/icons/Share';
 import Joyride from 'react-joyride';
 import ListIcon from '@material-ui/icons/List';
@@ -170,9 +171,9 @@ class VisualizeOptionsListComponent extends React.Component {
                                     onClick={() => { this.selectNewVisualisation("dashboard")}}
                                     >
                                     <Avatar>
-                                        <DashboardIcon />
+                                        <SportsEsportsIcon />
                                     </Avatar>
-                                        <ListItemText primary="Dashboard"/>
+                                        <ListItemText primary="Game"/>
                                 </ListItem>
                     </div>                    
 
