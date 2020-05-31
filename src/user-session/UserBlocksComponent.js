@@ -70,8 +70,8 @@ class UserBlocksComponent extends React.Component {
                     desc: "You are about to delete these blocks. This action cannot be reversed.\nDo you confirm?"
                 },
                 commit:{
-                    title: "Add blocks to story",
-                    desc: "You are about to add these blocks to the story.\nDo you confirm?"
+                    title: "Add blocks to game",
+                    desc: "You are about to add these blocks to the game.\nDo you confirm?"
                 },
                 selected:{
                     title: null,
@@ -92,15 +92,15 @@ class UserBlocksComponent extends React.Component {
             tooltipText:{
                 entityPane:[                    
                     {                    
-                        title: 'Your story is empty!',
+                        title: 'Your game is empty!',
                         target: '.entityPaneButtonTooltip',
-                        content: 'First you have to define the entities or characters of your story. Click on this button to start defining the entities',
+                        content: 'First you have to define the entities or characters of your game. Click on this button to start defining the entities',
                         disableBeacon: true
                     }             
                 ],
                 addBlocks:[                    
                     {                    
-                        title: 'Click on \'Contribute\' to start adding content to your story!',
+                        title: 'Click on \'Contribute\' to start adding content to your game!',
                         target: '.addBulkBlockButton',
                         content: '',
                         disableBeacon: true
@@ -116,9 +116,9 @@ class UserBlocksComponent extends React.Component {
                 ],
                 commitBlock:[
                     {
-                        title: 'Add your block to the story!',
+                        title: 'Add your block to the game!',
                         target: '.inReviewBlockList',
-                        content: 'Your block is in review. You can see it in this list. Since you are the creator of the story, you also get to review the block. But for now, you can skip the review and directly add it to the story. Click on your block in review.',
+                        content: 'Your block is in review. You can see it in this list. Since you are the creator of the game, you also get to review the block. But for now, you can skip the review and directly add it to the game. Click on your block in review.',
                         disableBeacon: true
                     }
                 ]
@@ -1325,7 +1325,7 @@ class UserBlocksComponent extends React.Component {
                                             variant="contained" 
                                             className="multiSelectCommitBlockButton" 
                                             onClick={() => {this.toggleDialog(true,'commit')}}>
-                                                <div>Add to story</div>
+                                                <div>Add to game</div>
                                         </Button>
                                         :
                                         null
@@ -1408,7 +1408,6 @@ class UserBlocksComponent extends React.Component {
                     <TabList>
                         <Tab>Graph</Tab>
                         <Tab>Timeline</Tab>
-                        <Tab>Summary</Tab>
                     </TabList>
 
                     <TabPanel>
@@ -1516,18 +1515,6 @@ class UserBlocksComponent extends React.Component {
                             </div>
                             :
                             <div className="blocklist-message">No content available for timeline.</div>
-                            }
-                    </TabPanel>
-
-                    <TabPanel>
-                        {this.isSummaryBlocksAvailable()?
-                            <div>                            
-                                <SummaryViewComponent
-                                    summaryBlocks = {this.props.summaryBlocks}
-                                    selectBlock={this.props.selectBlock}/>   
-                            </div>
-                            :
-                            <div className="blocklist-message">No content available for summary.</div>
                             }
                     </TabPanel>
                 </Tabs>
