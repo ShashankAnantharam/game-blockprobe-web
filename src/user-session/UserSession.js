@@ -58,8 +58,8 @@ class UserSession extends React.Component {
             landingPage:{
                 journalist:{
                     logo: '',
-                    text: 'As a journalist, you can build your story using blockprobe, visualise your story and better engage your audience with your story.',
-                    background: JournalistBackground
+                    text: 'As a student, you can build games to revise complex subjects and share the game with friends.',
+                    background: TeacherBackground
                 },
                 police:{
                     logo: '',
@@ -72,7 +72,7 @@ class UserSession extends React.Component {
                 },
                 teacher:{
                     logo: '',
-                    text: 'As a teacher, you can visualise your chapters in history, science and english using blockprobe, and better engage your students with these subjects.',
+                    text: 'As a teacher, you can build games for students to enhance the teaching experience in subjects such as history and science using blockprobe.',
                     background: TeacherBackground
                 }
             },
@@ -748,7 +748,7 @@ class UserSession extends React.Component {
                 
                     <div style={{height:'100vh',overflow:'auto'}}>
                         <img class="background-image teacherImage" src={TeacherBackground}></img>
-                        <img class="background-image journalistImage" src={JournalistBackground}></img>
+                        <img class="background-image journalistImage" src={TeacherBackground}></img>
                         <img class="background-image politicianImage" src={LawmakerBackground}></img>
                         <GoogleFontLoader
                             fonts={[
@@ -777,7 +777,7 @@ class UserSession extends React.Component {
                                     <Img src={mainLogoList}
                                     style={{width:'180px', marginTop:'-20px'}}></Img>
                                 </div>
-                                <div style={{fontFamily: 'Lora, bold-italic', textAlign:'center', fontSize: '18px', fontWeight:'bold', marginTop:'-20px'}}><span>Visually engage your audience and yourself with your work.</span></div>
+                                <div style={{fontFamily: 'Lora, bold-italic', textAlign:'center', fontSize: '18px', fontWeight:'bold', marginTop:'-20px'}}><span>Create interactive visual games for children.</span></div>
                                 <div className="lpTabContainer">
                                     <Paper square className="lpTabPaper">
                                         <Tabs
@@ -789,8 +789,7 @@ class UserSession extends React.Component {
                                             aria-label="icon tabs example"
                                         >
                                             <Tab icon={<SchoolIcon />} value={0} aria-label="phone" label="TEACHERS"/>
-                                            <Tab icon={<PersonPinIcon />} value={1} aria-label="person" label="JOURNALISTS"/>
-                                            <Tab icon={<PolicyIcon />} value={2} aria-label="favorite" label="LAWMAKERS"/>                                            
+                                            <Tab icon={<PersonPinIcon />} value={1} aria-label="person" label="STUDENTS"/>                                            
                                         </Tabs>
                                     </Paper>
                                 </div>
