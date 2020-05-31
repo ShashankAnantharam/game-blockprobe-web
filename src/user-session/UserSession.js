@@ -13,7 +13,7 @@ import Img from 'react-image';
 import JournalistBackground from "./backgrounds/Journalist.jpg";
 import TeacherBackground from "./backgrounds/Teacher.jpg";
 import LawmakerBackground from "./backgrounds/lawmaker.jpg";
-import MainLogo from "./icons/logo.png";
+import MainLogo from "./icons/BlockprobeLogo.png";
 import UserWall from "./userWall/UserWall";
 import UserNotifications from "./userNotif/UserNotifications";
 import AppBar from '@material-ui/core/AppBar';
@@ -775,9 +775,9 @@ class UserSession extends React.Component {
                         <div className="landing-view-container">                       
                         <div style={{paddingTop:'10px', textAlign:'center'}}>
                                     <Img src={mainLogoList}
-                                    style={{width:'50%'}}></Img>
+                                    style={{width:'180px', marginTop:'-20px'}}></Img>
                                 </div>
-                                <div style={{fontFamily: 'Lora, bold-italic', textAlign:'center', fontSize: '26px', fontWeight:'bold'}}><span>Visually engage your audience and yourself with your work.</span></div>
+                                <div style={{fontFamily: 'Lora, bold-italic', textAlign:'center', fontSize: '18px', fontWeight:'bold', marginTop:'-20px'}}><span>Visually engage your audience and yourself with your work.</span></div>
                                 <div className="lpTabContainer">
                                     <Paper square className="lpTabPaper">
                                         <Tabs
