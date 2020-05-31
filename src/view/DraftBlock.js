@@ -71,8 +71,8 @@ class DraftBlockComponent extends React.Component {
                     desc: "You are about to delete this block. This action cannot be reversed.\nDo you confirm?"
                 },
                 commit:{
-                    title: "Add block to story",
-                    desc: "You are about to add this block to the story.\nDo you confirm?"
+                    title: "Add block to game",
+                    desc: "You are about to add this block to the game.\nDo you confirm?"
                 },
                 selected:{
                     title: null,
@@ -95,9 +95,9 @@ class DraftBlockComponent extends React.Component {
                         placement: 'center'
                     },
                     {                    
-                        title: 'Add block to your story after editing!',
+                        title: 'Add block to your game after editing!',
                         target: '.commitBlockTooltip',
-                        content: 'After editing, click this button to add to story!',
+                        content: 'After editing, click this button to add to game!',
                         disableBeacon: true,
                         placementBeacon: 'left',
                         event: 'hover'
@@ -111,7 +111,7 @@ class DraftBlockComponent extends React.Component {
                         {
                             title: 'Add date and time',
                             target: '.tooltipDatetime',
-                            content: 'If the content of your block describes some event (someones birth, the creation of a company, a terrorist attack, etc.) that is associated with some date and time, then add that to the block. This enables your block to appear in the Timeline visualisation that shows the chronological view of your story.',
+                            content: 'If the content of your block describes some event (someones birth, the creation of a company, a terrorist attack, etc.) that is associated with some date and time, then add that to the block. This enables your block to appear in the Timeline visualisation that shows the chronological view of your game.',
                             disableBeacon: true
                         }
                     ]
@@ -122,7 +122,7 @@ class DraftBlockComponent extends React.Component {
                         {
                             title: 'Tag entities/characters!',
                             target: '.tooltipEntities',
-                            content: 'Your block will be associated with some characters of the entire story. You can tag those characters (or entities) here. Typically, some entities are autodetected in the text and tagged when you create the block. The entities from these tags appear in the Graph visualisation of your story that show how your story\'s characters are connected with one-another. Your block will also show up in the Graph visualisation if the viewer clicks on the entities that are tagged.',
+                            content: 'Your block will be associated with some characters of the entire game. You can tag those characters (or entities) here. Typically, some entities are autodetected in the text and tagged when you create the block. The entities from these tags appear in the Graph visualisation of your game that show how your game\'s characters are connected with one-another. Your block will also show up in the Graph visualisation if the viewer clicks on the entities that are tagged.',
                             disableBeacon: true
                         }
                     ]
@@ -133,7 +133,7 @@ class DraftBlockComponent extends React.Component {
                         {
                             title: 'Add evidences!',
                             target: '.tooltipEvidences',
-                            content: 'You may want to add authenticity to your block\'s content by adding evidences that is visible to any viewer. You have to provide a link to the actual evidence that viewers of the story can click and navigate to. If your evidence is a picture (a chart), then add the link of the picture here so that the viewers of the story can see it when they click on your block.',
+                            content: 'You may want to add authenticity to your block\'s content by adding evidences that is visible to any viewer. You have to provide a link to the actual evidence that viewers of the game can click and navigate to. If your evidence is a picture (a chart), then add the link of the picture here so that the viewers of the game can see it when they click on your block.',
                             disableBeacon: true
                         }
                     ]
@@ -746,22 +746,6 @@ class DraftBlockComponent extends React.Component {
       
     EditSingleBlock(listItem, index){
 
-        var renderEvidenceList = "";
-        if(!isNullOrUndefined(this.state.newBlock.evidences)){
-            // console.log(this.state.newBlock.evidences);
-            renderEvidenceList = this.state.newBlock.evidences.map((blockEvidence, index) => 
-                this.singleBlockEvidence(blockEvidence, index)
-            );            
-        }
-
-        var renderNumberList = "";
-        if(!isNullOrUndefined(this.state.newBlock.numbers)){
-            // console.log(this.state.newBlock.numbers);
-            renderNumberList = this.state.newBlock.numbers.map((blockNumber, index) => 
-                this.singleBlockNumber(blockNumber, index)
-            );            
-        }
-
         let actionType = '';
         if(this.state.newBlock.actionType)
             actionType = this.state.newBlock.actionType;
@@ -780,7 +764,7 @@ class DraftBlockComponent extends React.Component {
                 {this.props.bpDetails.criterion == 0?
                                     <div>
                                         <p className="openTooltipTextContainer">
-                                                Click on <a className='tooltip-selection' onClick={() => this.toggleDeleteBlockDialog(true,'commit')}>Add to story</a> to add your block to the story. <br/><br/>
+                                                Click on <a className='tooltip-selection' onClick={() => this.toggleDeleteBlockDialog(true,'commit')}>Add to game</a> to add your block to the game. <br/><br/>
                                         </p>
                                     </div>
                                     :
@@ -793,7 +777,7 @@ class DraftBlockComponent extends React.Component {
                                             variant="contained"
                                             className="commitBlockButton commitBlockTooltip" 
                                             onClick={() => this.toggleDeleteBlockDialog(true,'commit')}>
-                                                <div className="buttonDraftGeneral">Add to story</div>
+                                                <div className="buttonDraftGeneral">Add to game</div>
                                         </Button>
                                     </div>
                                     :
@@ -974,85 +958,13 @@ class DraftBlockComponent extends React.Component {
                     </div>      
                 </div>
 
-                <div className="draft-box-evidence-container">
-                    <h6 style={{marginBottom:'3px',marginTop:'3px', fontSize:'19px'}}>
-                        Add evidences
-                        <a className='tooltipEvidences tooltips-draft' 
-                            onClick={(e)=>{this.showLocalTooltip('evidences')}}>
-                            <Info style={{fontSize:'19px'}}/>
-                        </a>                         
-                        <Joyride
-                                styles={{
-                                    options: {
-                                    arrowColor: '#e3ffeb',
-                                    beaconSize: '4em',
-                                    primaryColor: '#05878B',
-                                    backgroundColor: '#e3ffeb',
-                                    overlayColor: 'rgba(10,10,10, 0.4)',
-                                    width: 900,
-                                    zIndex: 1000,
-                                    }
-                                    }}
-                                    steps={this.state.adhocTooltip.evidences.text}
-                                    run = {this.state.adhocTooltip.evidences.flag}
-                                    callback={(data)=>{this.handleAdhocTooltipJoyrideCallback(data,'evidences')}}                    
-                                    />
-                    </h6>                    
-                    <Button 
-                        variant="contained"
-                        className="addEvidenceButton" 
-                        onClick={this.addEvidence}
-                        >                    
-                            <div>Add new evidence</div>
-                        </Button>  
-                    <div>
-                        {renderEvidenceList}
-                    </div> 
-                </div>
-                <div className="draft-box-number-container">
-                    <h6 style={{marginBottom:'3px',marginTop:'3px', fontSize:'19px'}}>
-                        Add relevant numbers
-                        <a className='tooltipNumbers tooltips-draft' 
-                            onClick={(e)=>{this.showLocalTooltip('numbers')}}>
-                            <Info style={{fontSize:'19px'}}/>
-                        </a>    
-                        <Joyride
-                                styles={{
-                                    options: {
-                                    arrowColor: '#e3ffeb',
-                                    beaconSize: '4em',
-                                    primaryColor: '#05878B',
-                                    backgroundColor: '#e3ffeb',
-                                    overlayColor: 'rgba(10,10,10, 0.4)',
-                                    width: 900,
-                                    zIndex: 1000,
-                                    }
-                                    }}
-                                    steps={this.state.adhocTooltip.numbers.text}
-                                    run = {this.state.adhocTooltip.numbers.flag}
-                                    callback={(data)=>{this.handleAdhocTooltipJoyrideCallback(data,'numbers')}}                    
-                                    />                     
-                    </h6>                    
-                        <Button 
-                        variant="contained"
-                        className="addNumberButton" 
-                        onClick={this.addNumber}
-                        >                    
-                            <div>Add new number</div>
-                        </Button>  
-                    <div>
-                        {renderNumberList}
-                    </div> 
-
-                    
-                </div>
                 <div className="draft-options-container" style={{marginTop:'0.1em'}}>
                 {this.props.bpDetails.criterion == 0?
                                     <Button 
                                         variant="contained"
                                         className="commitBlockButton" 
                                         onClick={() => this.toggleDeleteBlockDialog(true,'commit')}>
-                                            <div className="buttonDraftGeneral">Add to story</div>
+                                            <div className="buttonDraftGeneral">Add to game</div>
                                     </Button>
                                     :
                                     null
@@ -1089,7 +1001,7 @@ class DraftBlockComponent extends React.Component {
                 {this.props.bpDetails.criterion == 0?
                                     <div>
                                         <p className="openTooltipTextContainer">
-                                                Click on <a className='tooltip-selection' onClick={() => this.toggleDeleteBlockDialog(true,'commit')}>Add to story</a> to add your block to the story. <br/><br/>
+                                                Click on <a className='tooltip-selection' onClick={() => this.toggleDeleteBlockDialog(true,'commit')}>Add to game</a> to add your block to the game. <br/><br/>
                                         </p>
                                     </div>
                                     :
