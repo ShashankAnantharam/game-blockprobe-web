@@ -72,7 +72,7 @@ class ShareBlockprobeComponent extends React.Component {
                     {
                         title: 'Link to share with public',
                         target: '.share-url',
-                        content: 'Share your dashboard with the general public using this link so that they can also engage with your story.',
+                        content: 'Share your dashboard with the general public using this link so that they can also engage with your game.',
                         disableBeacon: true
                     }
                 ]
@@ -191,7 +191,7 @@ class ShareBlockprobeComponent extends React.Component {
                             variant="contained" 
                             className="publishBlockprobeButton"
                             onClick={this.publishStory}>
-                                <div>Publish latest story</div>
+                                <div>Publish latest game</div>
                             </Button>
                         </div>
                             {this.state.isBlockprobeAlreadyPublished?
@@ -200,35 +200,7 @@ class ShareBlockprobeComponent extends React.Component {
                                     variant="contained" 
                                     className="unpublishBlockprobeButton"
                                     onClick={this.unpublishStory}>
-                                        <div>Unpublish story</div>
-                                    </Button>
-                                </div>
-                                :
-                                null
-                            }
-
-                            {this.state.isBlockprobeAlreadyPublished && 
-                                !this.isStoryAlreadyAdded()?
-                                <div style={{marginBottom: '10px'}}>
-                                    <Button
-                                    variant="contained" 
-                                    className="addToWallButton"
-                                    onClick={this.addStoryToWall}>
-                                        <div>Add story to my wall</div>
-                                    </Button>
-                                </div>
-                                :
-                                null
-                            }
-
-                            {this.state.isBlockprobeAlreadyPublished && 
-                                this.isStoryAlreadyAdded()?
-                                <div style={{marginBottom: '10px'}}>
-                                    <Button
-                                    variant="contained" 
-                                    className="addToWallButton"
-                                    onClick={this.removeStoryFromWall}>
-                                        <div>Remove story from my wall</div>
+                                        <div>Unpublish game</div>
                                     </Button>
                                 </div>
                                 :
@@ -241,36 +213,11 @@ class ShareBlockprobeComponent extends React.Component {
                 <div>
                     {this.state.didPublishBlocksInSession && this.state.didPublishImagesInSession?
                         <div>
-                            <p className='publish-story-message'>Your latest story has been succesfully published!</p>
+                            <p className='publish-story-message'>Your latest game has been succesfully published!</p>
                         </div>
                         :
                         null
-                    }                    
-                    <div className='share-section-heading'>
-                        Public link to visualize
-                        <a className='share-tooltips' onClick={(e)=>{this.showLocalTooltip('publicLink')}} >
-                                <Info style={{fontSize:'19px'}}/>
-                        </a>                    
-                        <Joyride
-                                    styles={{
-                                        options: {
-                                        arrowColor: '#e3ffeb',
-                                        beaconSize: '4em',
-                                        primaryColor: '#05878B',
-                                        backgroundColor: '#e3ffeb',
-                                        overlayColor: 'rgba(10,10,10, 0.4)',
-                                        width: 400,
-                                        zIndex: 1000,
-                                        }
-                                        }}
-                                        steps={this.state.adhocTooltip.publicLink.text}
-                                        run = {this.state.adhocTooltip.publicLink.flag}
-                                        callback={(data)=>{this.handleAdhocTooltipJoyrideCallback(data,'publicLink')}}                    
-                                        />                     
-                    </div>
-                    <div className="share-url-div">
-                        <a href={url} target="_blank" className="share-url">{url}</a>
-                    </div>
+                    }                                        
                     <div className='share-section-heading'>
                         Public link to play game                     
                     </div>
