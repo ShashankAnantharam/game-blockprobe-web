@@ -993,10 +993,12 @@ class UserBlocksComponent extends React.Component {
                 <div className="contributeOpenTooltipTextContainer">
                 {Object.keys(this.state.successBlocks).length>0?
                         <p className="contributeOpenTooltipText">
-                            Click on the menu (top-left) and choose <a className='tooltip-selection' onClick={this.setShareVisualization}>Share</a> to share.<br/><br/>
+                            Click on <a className='tooltip-selection' onClick={this.publishStory}>Publish Game</a> to share your game.<br/><br/>
                         </p>                        
                         :
-                        null
+                        <p className="contributeOpenTooltipText">
+                            Start making your game by creating a connection.<br/><br/>
+                        </p>
                         }
                 </div>   
         </div>
@@ -1196,6 +1198,17 @@ class UserBlocksComponent extends React.Component {
         )
     }
 
+    shouldShowBlocks(){
+        /*
+        If user has not made any contributions yet, then don't show!
+        */
+        if(Object.keys(this.state.draftBlocks).length>0 || Object.keys(this.state.successBlocks).length>0
+        || Object.keys(this.state.toReviewBlocks).length>0 || Object.keys(this.state.inReviewBlocks).length>0){
+            return true;
+        }
+        return false;
+    }
+
     render(){
 
         const scope = this;
@@ -1254,112 +1267,28 @@ class UserBlocksComponent extends React.Component {
                             </Button>
                             </DialogActions>
                         </Dialog>
-                    <div className="visualization-tabs-title">My contributions</div>
-                    <Tabs className="blocksTab" onSelect={this.onSelectTab}>
-                        <TabList>
-                        <Tab>DRAFT</Tab>
+                    {this.shouldShowBlocks()?
+                    <div>
+                        <div className="visualization-tabs-title">My contributions</div>           
+                        <Tabs className="blocksTab" onSelect={this.onSelectTab}>
+                            <TabList>
+                            <Tab>DRAFT</Tab>
 
-                        <Tab>SUCCESSFUL</Tab>
+                            <Tab>SUCCESSFUL</Tab>
 
-                        {Object.keys(this.state.inReviewBlocks).length>0?
-                            <Tab>IN REVIEW</Tab>
-                                :
-                                null}
+                            {Object.keys(this.state.inReviewBlocks).length>0?
+                                <Tab>IN REVIEW</Tab>
+                                    :
+                                    null}
 
-                        {Object.keys(this.state.toReviewBlocks).length>0?
-                            <Tab>TO REVIEW</Tab>
-                                :
-                                null}                   
-                        </TabList>
-                    
-                        <TabPanel>
-                        {Object.keys(this.state.draftBlocks).length>0?
-                            <div>
-                                <Joyride
-                            styles={{
-                                options: {
-                                arrowColor: '#e3ffeb',
-                                beaconSize: '3em',
-                                primaryColor: '#05878B',
-                                backgroundColor: '#e3ffeb',
-                                overlayColor: 'rgba(10,10,10, 0.4)',
-                                width: 900,
-                                zIndex: 1000,
-                                }
-                            }}
-                                steps={this.state.tooltipText.draftBlock}
-                                run = {this.state.showTooltip.draftBlock}                    
-                                />                                 
-                                <div className="multiselect-button-container">
-                                    {this.state.multiSelectDraftBlockStatus?
-                                        <Button
-                                            variant="contained" 
-                                            className="multiSelectBlockButton" 
-                                            onClick={this.toggleMultiSelect}>
-                                                <div>Close multiselect</div>
-                                        </Button>
-                                        :
-                                        <Button 
-                                            variant="contained"
-                                            className="multiSelectBlockButton" 
-                                            onClick={this.toggleMultiSelect}>
-                                                <div>Multiselect</div>
-                                        </Button>
-                                    }
-
-                                    {Object.keys(this.state.multiSelectedBlocks).length > 0 &&
-                                        this.state.multiSelectDraftBlockStatus?
-                                        <Button
-                                            variant="contained" 
-                                            className="multiSelectDeleteBlockButton" 
-                                            onClick={() => {this.toggleDialog(true,'delete')}}>
-                                                <div>Delete</div>
-                                        </Button>
-                                        :
-                                        null
-                                    }
-
-                                    {Object.keys(this.state.multiSelectedBlocks).length > 0 &&
-                                        this.state.multiSelectDraftBlockStatus?
-                                        <Button
-                                            variant="contained" 
-                                            className="multiSelectCommitBlockButton" 
-                                            onClick={() => {this.toggleDialog(true,'commit')}}>
-                                                <div>Add to game</div>
-                                        </Button>
-                                        :
-                                        null
-                                    }
-                                    
-                                </div>                                                               
-                                <Paper className="block-list-content draftBlocksList" elevation={3}>
-                                    <List>{draftBlocksListRender}</List>
-                                </Paper>
-                                <div>
-                                    {singleDraftBlocksListRender}
-                                </div> 
-                            </div>
-                            :
-                            <div className="blocklist-message">{draftBlocksListRender}</div>
-                            }
-                        </TabPanel> 
+                            {Object.keys(this.state.toReviewBlocks).length>0?
+                                <Tab>TO REVIEW</Tab>
+                                    :
+                                    null}                   
+                            </TabList>
                         
-                        <TabPanel>
-                            {Object.keys(this.state.successBlocks).length>0?
-                            
-                                    <div>
-                                        <Paper className="block-list-content" elevation={3}>
-                                            <List>{successBlocksListRender}</List>
-                                        </Paper>
-                                    </div>
-                                
-                                :
-                            <div className="blocklist-message">{successBlocksListRender}</div>
-                            }
-                        </TabPanel>
-
-                        {Object.keys(this.state.inReviewBlocks).length>0?
                             <TabPanel>
+                            {Object.keys(this.state.draftBlocks).length>0?
                                 <div>
                                     <Joyride
                                 styles={{
@@ -1373,32 +1302,122 @@ class UserBlocksComponent extends React.Component {
                                     zIndex: 1000,
                                     }
                                 }}
-                                    steps={this.state.tooltipText.commitBlock}
-                                    run = {this.state.showTooltip.commitBlock}                    
-                                    /> 
-                                    <Paper className="block-list-content inReviewBlockList" elevation={3}>
-                                        <List>{inReviewBlocksListRender}</List>
-                                    </Paper>
-                                </div>
-                            </TabPanel>
-                            :
-                            null
-                            }
+                                    steps={this.state.tooltipText.draftBlock}
+                                    run = {this.state.showTooltip.draftBlock}                    
+                                    />                                 
+                                    <div className="multiselect-button-container">
+                                        {this.state.multiSelectDraftBlockStatus?
+                                            <Button
+                                                variant="contained" 
+                                                className="multiSelectBlockButton" 
+                                                onClick={this.toggleMultiSelect}>
+                                                    <div>Close multiselect</div>
+                                            </Button>
+                                            :
+                                            <Button 
+                                                variant="contained"
+                                                className="multiSelectBlockButton" 
+                                                onClick={this.toggleMultiSelect}>
+                                                    <div>Multiselect</div>
+                                            </Button>
+                                        }
+
+                                        {Object.keys(this.state.multiSelectedBlocks).length > 0 &&
+                                            this.state.multiSelectDraftBlockStatus?
+                                            <Button
+                                                variant="contained" 
+                                                className="multiSelectDeleteBlockButton" 
+                                                onClick={() => {this.toggleDialog(true,'delete')}}>
+                                                    <div>Delete</div>
+                                            </Button>
+                                            :
+                                            null
+                                        }
+
+                                        {Object.keys(this.state.multiSelectedBlocks).length > 0 &&
+                                            this.state.multiSelectDraftBlockStatus?
+                                            <Button
+                                                variant="contained" 
+                                                className="multiSelectCommitBlockButton" 
+                                                onClick={() => {this.toggleDialog(true,'commit')}}>
+                                                    <div>Add to game</div>
+                                            </Button>
+                                            :
+                                            null
+                                        }
                                         
-                        {Object.keys(this.state.toReviewBlocks).length>0?
+                                    </div>                                                               
+                                    <Paper className="block-list-content draftBlocksList" elevation={3}>
+                                        <List>{draftBlocksListRender}</List>
+                                    </Paper>
+                                    <div>
+                                        {singleDraftBlocksListRender}
+                                    </div> 
+                                </div>
+                                :
+                                <div className="blocklist-message">{draftBlocksListRender}</div>
+                                }
+                            </TabPanel> 
+                            
                             <TabPanel>
-                                <div>
-                                    <Paper className="block-list-content" elevation={3}>
-                                        <List>{toReviewBlocksListRender}</List>
-                                    </Paper>
-                                </div>
+                                {Object.keys(this.state.successBlocks).length>0?
+                                
+                                        <div>
+                                            <Paper className="block-list-content" elevation={3}>
+                                                <List>{successBlocksListRender}</List>
+                                            </Paper>
+                                        </div>
+                                    
+                                    :
+                                <div className="blocklist-message">{successBlocksListRender}</div>
+                                }
                             </TabPanel>
-                            :
-                            null
-                            }
-                        
-                                        
-                    </Tabs>
+
+                            {Object.keys(this.state.inReviewBlocks).length>0?
+                                <TabPanel>
+                                    <div>
+                                        <Joyride
+                                    styles={{
+                                        options: {
+                                        arrowColor: '#e3ffeb',
+                                        beaconSize: '3em',
+                                        primaryColor: '#05878B',
+                                        backgroundColor: '#e3ffeb',
+                                        overlayColor: 'rgba(10,10,10, 0.4)',
+                                        width: 900,
+                                        zIndex: 1000,
+                                        }
+                                    }}
+                                        steps={this.state.tooltipText.commitBlock}
+                                        run = {this.state.showTooltip.commitBlock}                    
+                                        /> 
+                                        <Paper className="block-list-content inReviewBlockList" elevation={3}>
+                                            <List>{inReviewBlocksListRender}</List>
+                                        </Paper>
+                                    </div>
+                                </TabPanel>
+                                :
+                                null
+                                }
+                                            
+                            {Object.keys(this.state.toReviewBlocks).length>0?
+                                <TabPanel>
+                                    <div>
+                                        <Paper className="block-list-content" elevation={3}>
+                                            <List>{toReviewBlocksListRender}</List>
+                                        </Paper>
+                                    </div>
+                                </TabPanel>
+                                :
+                                null
+                                }
+                            
+                                            
+                        </Tabs>
+                    </div>
+                    :
+                    null
+                }
                 </div>
 
                 <div className="contributionVisualizationContainer">

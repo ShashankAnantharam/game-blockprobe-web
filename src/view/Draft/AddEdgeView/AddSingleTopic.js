@@ -170,7 +170,8 @@ class AddSingleTopicView extends React.Component {
                         className="confirmEdgeButton"
                         >Confirm</Button>
                         :
-                        <p className="edgeEntityMessage">*Input exactly one topic and describe it!</p>
+                        <p className="edgeEntityMessage">*Input exactly one topic and describe it! <br/>
+                        To input a topic, type the topic name and press enter.</p>
                 }
                 
             </div>

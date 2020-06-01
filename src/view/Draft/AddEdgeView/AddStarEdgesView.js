@@ -139,7 +139,7 @@ class AddStarEdgesView extends React.Component {
                                 variant="outlined"
                                 value={this.state.summary}
                                 onChange={(e) => { this.handleChange(e,"connection-description")}}
-                                label = "Add connection description"
+                                label = "Describe connection"
                                 multiline
                                 rowsMax="3"
                                 rows="2"
@@ -203,7 +203,8 @@ class AddStarEdgesView extends React.Component {
                         className="confirmEdgeButton"
                         >Confirm</Button>
                         :
-                        <p className="edgeEntityMessage">*Input one primary topic and atleast one secondary topic!</p>
+                        <p className="edgeEntityMessage">*Input one primary topic and atleast one secondary topic! <br/>
+                        To input a topic, type the topic name and press enter.</p>
                 }
                 
             </div>

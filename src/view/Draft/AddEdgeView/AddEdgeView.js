@@ -127,7 +127,7 @@ class AddEdgeView extends React.Component {
                                 variant="outlined"
                                 value={this.state.summary}
                                 onChange={(e) => { this.handleChange(e,"connection-description")}}
-                                label = "Add connection description"
+                                label = "Describe connection"
                                 multiline
                                 rowsMax="3"
                                 rows="2"
@@ -158,7 +158,7 @@ class AddEdgeView extends React.Component {
                             });
                         }}
                         renderInput={(params) => (
-                        <TextField {...params} variant="outlined" label="Add topics" />
+                        <TextField {...params} variant="outlined" label="Input two topics" />
                         )}
                     />
                 </div>
@@ -169,7 +169,8 @@ class AddEdgeView extends React.Component {
                         className="confirmEdgeButton"
                         >Confirm</Button>
                         :
-                        <p className="edgeEntityMessage">*Input exactly two topics that you want to create a connection between!</p>
+                        <p className="edgeEntityMessage">*Input exactly two topics! <br/>
+                        To input a topic, type the topic name and press enter.</p>
                 }
                 
             </div>
