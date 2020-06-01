@@ -83,7 +83,7 @@ class ShareBlockprobeComponent extends React.Component {
                     {
                         title: 'Share link on social media',
                         target: '.shareContainer',
-                        content: 'You can directly open social media (Facebook and Whatsapp) and share your dashboard\'s public link.',
+                        content: 'You can directly open social media (Facebook and Whatsapp) and share your game\'s public link.',
                         disableBeacon: true
                     }
                 ]
@@ -250,13 +250,13 @@ class ShareBlockprobeComponent extends React.Component {
                         <div className='shareIcons'>
                             <FacebookShareButton                        
                                 children={<FacebookIcon round={true}/>} 
-                                url={url} 
+                                url={gameUrl} 
                                 hashtag = '#blockprobe'/>
                         </div>
                         <div className='shareIcons'>
                             <WhatsappShareButton
                                 children={<WhatsappIcon round={true}/>} 
-                                url={url} 
+                                url={gameUrl} 
                             />
                         </div>
                     </div>
