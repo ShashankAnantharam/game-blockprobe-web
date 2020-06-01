@@ -967,7 +967,7 @@ class UserBlocksComponent extends React.Component {
                             null}
                     </div>
                     
-                    {this.props.blockTree && Object.keys(this.props.blockTree).length>0?
+                    {this.state.successBlocks && Object.keys(this.state.successBlocks).length>0?
                         <div>
                             <Button
                             color="primary"
