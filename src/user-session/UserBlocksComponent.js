@@ -994,6 +994,7 @@ class UserBlocksComponent extends React.Component {
                 {Object.keys(this.state.successBlocks).length>0?
                         <p className="contributeOpenTooltipText">
                             Click on <a className='tooltip-selection' onClick={this.publishStory}>Publish Game</a> to share your game.<br/><br/>
+                            Click on <a className='tooltip-selection' onClick={this.openImagePane}>Manage game images</a> to add images to your topics.
                         </p>                        
                         :
                         <p className="contributeOpenTooltipText">
