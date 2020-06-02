@@ -1257,7 +1257,7 @@ class GamifiedGraphComponent extends React.Component {
 
                         <div className="specialViewMargin">
                             <div className="gameButtonContainer">
-                                {this.state.score>0 && !this.state.stopGame?
+                                {this.state.score>0 && !this.state.stopGame && this.props.isPublic?
                                     <Button
                                     variant="contained" 
                                     className="stopGamebutton"

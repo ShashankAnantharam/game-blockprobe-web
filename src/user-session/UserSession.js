@@ -777,7 +777,7 @@ class UserSession extends React.Component {
                                     <Img src={mainLogoList}
                                     style={{width:'180px', marginTop:'-20px'}}></Img>
                                 </div>
-                                <div style={{fontFamily: 'Lora, bold-italic', textAlign:'center', fontSize: '18px', fontWeight:'bold', marginTop:'-20px'}}><span>Create interactive visual games for children.</span></div>
+                                <div style={{fontFamily: 'Lora, bold-italic', textAlign:'center', fontSize: '18px', fontWeight:'bold', marginTop:'-20px'}}><span>Enhance the learning experience by creating games!</span></div>
                                 <div className="lpTabContainer">
                                     <Paper square className="lpTabPaper">
                                         <Tabs

@@ -286,7 +286,7 @@ class GamifiedTimelineComponent extends React.Component {
                     {!this.state.stopGame?
                                 <div>              
                                     <div className="gameButtonContainer">
-                                        {this.state.score>0 && !this.state.stopGame?
+                                        {this.state.score>0 && !this.state.stopGame && this.props.isPublic?
                                             <Button
                                             variant="contained" 
                                             className="stopGamebutton"
