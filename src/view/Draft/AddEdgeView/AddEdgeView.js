@@ -161,7 +161,7 @@ class AddEdgeView extends React.Component {
                         renderInput={(params) => (
                         <TextField {...params} 
                         variant="outlined" 
-                        placeholder="Type the topic name (eg: lion) and press enter."
+                        placeholder="Type and press enter."
                         label="Input two topics" />
                         )}
                     />
@@ -173,7 +173,7 @@ class AddEdgeView extends React.Component {
                         className="confirmEdgeButton"
                         >Confirm</Button>
                         :
-                        <p className="edgeEntityMessage">*Input exactly two topics! <br/>
+                        <p className="edgeEntityMessage">*Input exactly two topics (Eg: Lion, Animal) <br/>
                         To input a topic, type the topic name and press enter.</p>
                 }
                 
