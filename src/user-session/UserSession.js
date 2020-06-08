@@ -647,7 +647,7 @@ class UserSession extends React.Component {
                             Blockprobe
                         </Typography>                      
                         <div style={{flexGrow: '1'}}></div> 
-                        {notificationNumber > 0?
+                        {notificationNumber?
                             <IconButton color="inherit" onClick={() => this.viewNotifications()}>
                                 <Badge badgeContent={notificationNumber} color="secondary">
                                     <NotificactionsIcon />
