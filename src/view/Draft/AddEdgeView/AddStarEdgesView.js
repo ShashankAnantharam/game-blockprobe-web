@@ -13,6 +13,7 @@ import  * as Utils from '../../../common/utilSvc';
 import './AddEdgeView.css';
 import * as firebase from 'firebase';
 import 'firebase/firestore';
+import ReactGA from 'react-ga';
 import { isNull, isNullOrUndefined } from 'util';
 import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
 
@@ -33,6 +34,9 @@ class AddStarEdgesView extends React.Component {
             baseEntity: []
         }
 
+        ReactGA.initialize('UA-143383035-1');   
+        ReactGA.pageview('/userBlocks');
+
         this.confirmEdge = this.confirmEdge.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.getEntities = this.getEntities.bind(this);
@@ -45,6 +49,11 @@ class AddStarEdgesView extends React.Component {
         if(shouldUpdate){
             if(type=="connection-description"){
                 this.setState({summary: event.target.value});
+                ReactGA.event({
+                    category: 'Add star edge',
+                    action: 'Add star edge desc '+ String(this.props.bId),
+                    label: 'Add star edge desc '+ String(this.props.bId)
+                  });
             }
             else  if(type=="entityA"){
                 this.setState({entityA: event.target.value});
@@ -165,6 +174,11 @@ class AddStarEdgesView extends React.Component {
                         }
                         value={this.state.baseEntity}
                         onChange = {(event, newValue) => {
+                            ReactGA.event({
+                                category: 'Add star edge',
+                                action: 'Add star edge primary '+ String(this.props.bId),
+                                label: 'Add star edge primary '+ String(this.props.bId)
+                              });                            
                             this.setState({
                                 baseEntity: newValue
                             });
@@ -187,6 +201,11 @@ class AddStarEdgesView extends React.Component {
                         }
                         value={this.state.selectedEntities}
                         onChange = {(event, newValue) => {
+                            ReactGA.event({
+                                category: 'Add star edge',
+                                action: 'Add star edge secondary '+ String(this.props.bId),
+                                label: 'Add star edge secondary '+ String(this.props.bId)
+                              });
                             this.setState({
                                 selectedEntities: newValue
                             });

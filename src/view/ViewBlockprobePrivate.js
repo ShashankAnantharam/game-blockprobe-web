@@ -312,6 +312,11 @@ class ViewBlockprobePrivateComponent extends React.Component {
               });
         }
         else{
+            ReactGA.event({
+                category: 'Open menu',
+                action: 'Open menu '+ String(this.props.bId),
+                label: 'Open menu '+ String(this.props.bId)
+              });
             if(this.state.selectedVisualisation!='dashboard' && this.state.showTooltip.viewDashboardView){
                 this.finishAddingBlockToStoryTooltip();
             }
@@ -860,6 +865,12 @@ class ViewBlockprobePrivateComponent extends React.Component {
                 isloading: loadingState
             });
         });
+
+        ReactGA.event({
+            category: 'Refresh blockprobe',
+            action: 'Refresh blockprobe '+ String(this.props.bId),
+            label: 'Refresh blockprobe '+ String(this.props.bId)
+          });
     }
 
     getLatestTimestamp(snapshot){

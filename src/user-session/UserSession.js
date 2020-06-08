@@ -646,10 +646,7 @@ class UserSession extends React.Component {
                         <Typography className="toolbar__logo">
                             Blockprobe
                         </Typography>                      
-                        <div style={{flexGrow: '1'}}></div>
-                        <IconButton color="inherit" onClick={() => this.returnToViewBlockprobes()}>
-                            <HomeIcon/>
-                        </IconButton>  
+                        <div style={{flexGrow: '1'}}></div> 
                         {notificationNumber > 0?
                             <IconButton color="inherit" onClick={() => this.viewNotifications()}>
                                 <Badge badgeContent={notificationNumber} color="secondary">

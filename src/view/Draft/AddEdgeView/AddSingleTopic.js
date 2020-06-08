@@ -13,6 +13,7 @@ import  * as Utils from '../../../common/utilSvc';
 import './AddEdgeView.css';
 import * as firebase from 'firebase';
 import 'firebase/firestore';
+import ReactGA from 'react-ga';
 import { isNull, isNullOrUndefined } from 'util';
 import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
 
@@ -32,6 +33,9 @@ class AddSingleTopicView extends React.Component {
             selectedEntities: []
         }
 
+        ReactGA.initialize('UA-143383035-1');   
+        ReactGA.pageview('/userBlocks');
+
         this.confirmEdge = this.confirmEdge.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.getEntities = this.getEntities.bind(this);
@@ -43,6 +47,11 @@ class AddSingleTopicView extends React.Component {
         shouldUpdate = Utils.shouldUpdateText(str, ['\n','\t']);
         if(shouldUpdate){
             if(type=="connection-description"){
+                ReactGA.event({
+                    category: 'Add single entity',
+                    action: 'Add single entity desc '+ String(this.props.bId),
+                    label: 'Add single entity desc '+ String(this.props.bId)
+                  });
                 this.setState({summary: event.target.value});
             }
             else  if(type=="entityA"){
@@ -153,6 +162,11 @@ class AddSingleTopicView extends React.Component {
                         }
                         value={this.state.selectedEntities}
                         onChange = {(event, newValue) => {
+                            ReactGA.event({
+                                category: 'Add single entity',
+                                action: 'Add single entity: entity '+ String(this.props.bId),
+                                label: 'Add single entity: desc '+ String(this.props.bId)
+                              });
                             this.setState({
                                 selectedEntities: newValue
                             });

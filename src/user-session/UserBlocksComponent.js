@@ -1465,6 +1465,7 @@ class UserBlocksComponent extends React.Component {
                                     investigationGraph = {this.props.investigationGraph}
                                     lastIndexDraftBlocks = {this.state.lastIndexDraftBlocks}
                                     lastIndex = {this.props.lastIndex}
+                                    bId = {this.props.bId}
                                 />
                                 :
                                 null
@@ -1477,6 +1478,7 @@ class UserBlocksComponent extends React.Component {
                                     lastIndexDraftBlocks = {this.state.lastIndexDraftBlocks}
                                     lastIndex = {this.props.lastIndex}
                                     commitMultipleBlocksToBlockprobe = {this.props.commitMultipleBlocksToBlockprobe}
+                                    bId = {this.props.bId}
                                 />
                                 :
                                 null
@@ -1488,6 +1490,7 @@ class UserBlocksComponent extends React.Component {
                                     investigationGraph = {this.props.investigationGraph}
                                     lastIndexDraftBlocks = {this.state.lastIndexDraftBlocks}
                                     lastIndex = {this.props.lastIndex}
+                                    bId = {this.props.bId}
                                 />
                                 :
                                 null
