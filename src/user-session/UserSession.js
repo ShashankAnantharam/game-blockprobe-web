@@ -650,14 +650,15 @@ class UserSession extends React.Component {
                         <IconButton color="inherit" onClick={() => this.returnToViewBlockprobes()}>
                             <HomeIcon/>
                         </IconButton>  
-                        <IconButton color="inherit" onClick={() => this.viewGameList()}>
-                            <SportsEsportsIcon/>
-                        </IconButton>                      
-                        <IconButton color="inherit" onClick={() => this.viewNotifications()}>
-                            <Badge badgeContent={notificationNumber} color="secondary">
-                                <NotificactionsIcon />
-                            </Badge>                           
-                        </IconButton>                        
+                        {notificationNumber > 0?
+                            <IconButton color="inherit" onClick={() => this.viewNotifications()}>
+                                <Badge badgeContent={notificationNumber} color="secondary">
+                                    <NotificactionsIcon />
+                                </Badge>                           
+                            </IconButton>
+                            :
+                            null
+                        }                                                                      
                         <Typography className="userName">
                             {this.state.userId}
                         </Typography>
