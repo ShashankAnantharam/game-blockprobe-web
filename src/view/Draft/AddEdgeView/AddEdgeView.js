@@ -128,6 +128,7 @@ class AddEdgeView extends React.Component {
                                 value={this.state.summary}
                                 onChange={(e) => { this.handleChange(e,"connection-description")}}
                                 label = "Describe connection"
+                                placeholder = "Eg: lion is an animal"
                                 multiline
                                 rowsMax="3"
                                 rows="2"
@@ -158,7 +159,10 @@ class AddEdgeView extends React.Component {
                             });
                         }}
                         renderInput={(params) => (
-                        <TextField {...params} variant="outlined" label="Input two topics" />
+                        <TextField {...params} 
+                        variant="outlined" 
+                        placeholder="Type the topic name (eg: lion) and press enter."
+                        label="Input two topics" />
                         )}
                     />
                 </div>

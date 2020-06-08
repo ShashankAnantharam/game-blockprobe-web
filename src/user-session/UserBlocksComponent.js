@@ -1515,7 +1515,7 @@ class UserBlocksComponent extends React.Component {
                                     selectNode = {this.selectGraphNode}/>                                                               
                             </div>
                             :
-                            <div className="blocklist-message">No content available for graph.</div>
+                            null
                             }
                     </TabPanel>
 
@@ -1534,7 +1534,7 @@ class UserBlocksComponent extends React.Component {
                                     selectBlock={this.props.selectBlock}/>
                             </div>
                             :
-                            <div className="blocklist-message">No content available for timeline.</div>
+                            null
                             }
                     </TabPanel>
                 </Tabs>
