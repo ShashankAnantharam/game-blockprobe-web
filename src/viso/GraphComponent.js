@@ -474,7 +474,7 @@ class GraphComponent extends React.Component {
                 }
             }
             let islands = Utils.getGraphIslandsAndValues(this.props.investigationGraph);
-            if(Object.keys(islands).length>0 && this.props.multiSelectEntityList[0].value){
+            if(Object.keys(islands).length>1 && this.props.multiSelectEntityList[0].value){
                 newGraph.push({
                     id:count,
                     label:'ALL',

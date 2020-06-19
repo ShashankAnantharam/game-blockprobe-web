@@ -109,17 +109,14 @@ class AmGraph extends React.Component {
         outlineCircle.propertyFields.disabled = 'imageDisabled';        
 
         // Configure All node icon
-        var allNode = series.nodes.template.createChild(am4core.Rectangle3D);
-        allNode.width = 35;
-        allNode.height = 15;
-        allNode.depth = 35;
-        allNode.angle = 45;
+        var allNode = series.nodes.template.createChild(am4core.Circle);
+        allNode.radius = 27;
         allNode.strokeOpacity = 1;
-        allNode.strokeWidth = 1.25;
+        allNode.strokeWidth = 9;
         allNode.stroke = am4core.color('black');
-        allNode.fillOpacity = 0.85;
+        allNode.fillOpacity = 1;
         allNode.fill = am4core.color('rgb(240,240,240)');
-        allNode.propertyFields.disabled = 'isNotAll';          
+        allNode.propertyFields.disabled = 'isNotAll';              
 
         series.centerStrength = 0.55;
         series.manyBodyStrength = -38;
