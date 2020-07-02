@@ -4,6 +4,7 @@ import StyleFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { isNullOrUndefined } from 'util';
 import * as Utils from '../common/utilSvc';
 import * as DbUtils from "../common/dbSvc";
+import * as Const from "../common/constants";
 import './UserSession.css';
 import UserBlockprobesComponent from './UserBlockprobes';
 import ViewBlockprobePrivateComponent from '../view/ViewBlockprobePrivate';
@@ -72,7 +73,7 @@ class UserSession extends React.Component {
                 },
                 teacher:{
                     logo: '',
-                    text: 'As a teacher, you can build games for students to enhance the teaching experience in subjects such as history and science using blockprobe.',
+                    text: 'As a teacher, you can build games for students to enhance the teaching experience.',
                     background: TeacherBackground
                 }
             },
@@ -793,12 +794,15 @@ class UserSession extends React.Component {
                                 </div>
                                 <div style={{marginTop:'16px'}}>
                                     {this.cueCardViewV2(currDetails.logo, currDetails.text)}
+                                </div>
+                                <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                                    <p style={{fontFamily: 'Lora, bold-italic', textAlign:'justify'}}>Play games created using the tool <a href={Const.gameListUrl} target="blank">here</a></p>
                                 </div>                        
                                 {this.state.showLogin?
                                 <div className="user-session-login-container-v2">                                     
                                     <div className='user-session-shadow-view-v2'>
                                         <div>
-                                            <span className="userSessionLoginHeader">Login</span>
+                                            <span className="userSessionLoginHeader">Login/Sign-up</span>
                                         </div>                                        
                                         <StyleFirebaseAuth
                                         uiConfig={this.getUiConfig()}
@@ -808,9 +812,8 @@ class UserSession extends React.Component {
                                 </div> : 
                                     null 
                                 }
-                                <div style={{marginTop:'3%'}}>
-                                    <a style={{fontFamily: 'Roboto, sans-serif', margin:'3%'}} href="https://sites.google.com/view/blockprobe/quickstart" target="blank">Quickstart</a>
-                                    <a style={{fontFamily: 'Roboto, sans-serif', margin:'3%'}} href="https://sites.google.com/view/blockprobe/home" target="blank">About</a>
+                                <div>
+                                    <a style={{fontFamily: 'Roboto, sans-serif', margin:'3%'}} href="https://sites.google.com/view/blockprobe/create-game-mtf" target="blank">Quickstart</a>
                                     <a style={{fontFamily: 'Roboto, sans-serif', margin:'3%'}} href="https://sites.google.com/view/blockprobe/privacy-policy" target="blank">Privacy Policy</a>
                                     <a style={{fontFamily: 'Roboto, sans-serif', margin:'3%'}} href="https://sites.google.com/view/blockprobe/terms-of-service" target="blank">Terms of Service</a>                                    
                                 </div>                                
