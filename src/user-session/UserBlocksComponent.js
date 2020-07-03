@@ -993,7 +993,7 @@ class UserBlocksComponent extends React.Component {
                 <div className="contributeOpenTooltipTextContainer_v1">
                 {Object.keys(this.state.successBlocks).length>0?
                         <p className="contributeOpenTooltipText_v1">
-                            Continue adding more connections to your mindmap. After that,<br/>
+                            Continue adding more connections to your mindmap. After that,<br/><br/>
                             Click on <a className='tooltip-selection' onClick={this.publishStory}>Publish Game</a> to share your game.<br/><br/>
                             Click on <a className='tooltip-selection' onClick={this.openImagePane}>Manage game images</a> to add images to your topics.
                         </p>                        
