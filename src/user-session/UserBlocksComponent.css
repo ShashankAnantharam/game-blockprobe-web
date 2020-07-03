@@ -147,11 +147,23 @@
     color: black;
 }
 
+.contributeOpenTooltipText_v1{
+    font-size: 16px;
+    color: black;
+}
+
 .contributeOpenTooltipTextContainer{
     padding: 3px; 
     margin: 0 1em 0 1em; 
     background: rgba(101, 155, 177, 0.363);
     border-radius: 5px;
+}
+
+.contributeOpenTooltipTextContainer_v1{
+    padding: 0 5px 0 5px; 
+    margin: 0 1em 0 1em; 
+    background: rgba(101, 155, 177, 0.363);
+    border: 1px solid black;
 }
 
 .graphVisualizationSingleEntity{

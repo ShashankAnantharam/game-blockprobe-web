@@ -990,15 +990,19 @@ class UserBlocksComponent extends React.Component {
                     null
                 }
 
-                <div className="contributeOpenTooltipTextContainer">
+                <div className="contributeOpenTooltipTextContainer_v1">
                 {Object.keys(this.state.successBlocks).length>0?
-                        <p className="contributeOpenTooltipText">
+                        <p className="contributeOpenTooltipText_v1">
+                            Continue adding more connections to your mindmap. After that,<br/>
                             Click on <a className='tooltip-selection' onClick={this.publishStory}>Publish Game</a> to share your game.<br/><br/>
                             Click on <a className='tooltip-selection' onClick={this.openImagePane}>Manage game images</a> to add images to your topics.
                         </p>                        
                         :
-                        <p className="contributeOpenTooltipText">
-                            Start making your game by creating a connection.<br/><br/>
+                        <p className="contributeOpenTooltipText_v1">
+                            Start making your game by creating a connection.<br/>
+                            <span className="contributeOpenTooltipText">Input two topics that you want to connect (eg: lion, animal).<br/>
+                            Describe the connection (eg: Lion is an animal).<br/>
+                            Click on <b>Confirm</b> when done.</span>
                         </p>
                         }
                 </div>   
@@ -1422,11 +1426,9 @@ class UserBlocksComponent extends React.Component {
                 </div>
 
                 <div className="contributionVisualizationContainer">
-                    <div className="visualization-tabs-title">Visualizations</div>
-
                     <Tabs style={{marginTop:'10px'}}>
                     <TabList>
-                        <Tab>Graph</Tab>
+                        <Tab>Mindmap</Tab>
                         <Tab>Timeline</Tab>
                     </TabList>
 
