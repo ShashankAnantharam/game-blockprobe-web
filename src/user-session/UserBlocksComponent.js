@@ -1237,7 +1237,7 @@ class UserBlocksComponent extends React.Component {
                                             (scope.renderSingleDraftBlock(block, scope, false)));                                            
 
         if(draftBlocksList.length == 0){
-            draftBlocksListRender = 'No contributions in draft.';
+            draftBlocksListRender = 'Nothing to edit.';
         }
                         
         var inReviewBlocksList = this.convertBlockMapToList(this.state.inReviewBlocks);
@@ -1277,9 +1277,9 @@ class UserBlocksComponent extends React.Component {
                         <div className="visualization-tabs-title">My contributions</div>           
                         <Tabs className="blocksTab" onSelect={this.onSelectTab}>
                             <TabList>
-                            <Tab>DRAFT</Tab>
+                            <Tab>EDIT</Tab>
 
-                            <Tab>SUCCESSFUL</Tab>
+                            <Tab>EXISTING</Tab>
 
                             {Object.keys(this.state.inReviewBlocks).length>0?
                                 <Tab>IN REVIEW</Tab>

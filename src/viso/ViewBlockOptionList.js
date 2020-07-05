@@ -328,7 +328,7 @@ class ViewBlockListComponent extends React.Component {
                         <Avatar>
                             <DeleteIcon />
                         </Avatar>
-                            <ListItemText primary="Remove Block"/>
+                            <ListItemText primary="Remove"/>
                     </ListItem>
 
                     <ListItem button 
@@ -337,7 +337,7 @@ class ViewBlockListComponent extends React.Component {
                         <Avatar>
                             <EditIcon />
                         </Avatar>
-                            <ListItemText primary="Modify Block"/>
+                            <ListItemText primary="Edit"/>
                     </ListItem>
                         
                 </List>
