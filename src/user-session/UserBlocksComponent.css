@@ -162,8 +162,19 @@
 .contributeOpenTooltipTextContainer_v1{
     padding: 0 5px 0 5px; 
     margin: 0 1em 0 1em; 
-    background: rgba(101, 155, 177, 0.363);
+    background: rgba(101, 155, 177, 0.6);
     border: 1px solid black;
+    animation: catchyAnim linear 1s infinite;
+}
+
+@keyframes catchyAnim{
+    0%   {margin-left: 1em;}
+    50%   {background: rgba(92, 141, 161, 0.253); margin-left: 1em;}
+    100%   {margin-left: 1em;}
+}
+
+.contributeOpenTooltipTextContainer_v1:hover{
+    animation: none;
 }
 
 .graphVisualizationSingleEntity{
