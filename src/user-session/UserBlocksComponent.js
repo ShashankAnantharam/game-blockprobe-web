@@ -1450,15 +1450,7 @@ class UserBlocksComponent extends React.Component {
                                         label={'Multiple connections'}
                                         toggleChange = {this.toggleGraphOptionStyle}
                                         />
-                                </div>
-                                <div>
-                                    <Checkbox 
-                                        value={'single_topic'}
-                                        isChecked={this.state.graphViewAddType == 'single_topic'}
-                                        label={'Single topic'}
-                                        toggleChange = {this.toggleGraphOptionStyle}
-                                        />
-                                </div>     
+                                </div>   
                             </div>
                             {this.state.graphViewAddType == 'single_connection'?
                                 <AddEdgeView
