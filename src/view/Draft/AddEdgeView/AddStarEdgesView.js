@@ -14,6 +14,7 @@ import './AddEdgeView.css';
 import * as firebase from 'firebase';
 import 'firebase/firestore';
 import ReactGA from 'react-ga';
+import Joyride,{ ACTIONS, EVENTS, STATUS } from 'react-joyride';
 import { isNull, isNullOrUndefined } from 'util';
 import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
 
@@ -31,7 +32,20 @@ class AddStarEdgesView extends React.Component {
         this.state ={
             summary: '',
             selectedEntities: [],
-            baseEntity: []
+            baseEntity: [],
+            adhocTooltip:{
+                confirm:{
+                    flag: false,
+                    text: [
+                        {
+                            title: null,
+                            target: '.confirmEdgeButtonGreyed',
+                            content: "Input one primary topic (eg: Animal) and atleast one secondary topic (eg: Lion, Tiger, Giraffe). To input a topic, type the topic name and press Enter.",
+                            disableBeacon: true
+                        }
+                    ]
+                }
+            }
         }
 
         ReactGA.initialize('UA-143383035-1');   
@@ -40,6 +54,34 @@ class AddStarEdgesView extends React.Component {
         this.confirmEdge = this.confirmEdge.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.getEntities = this.getEntities.bind(this);
+        this.showLocalTooltip = this.showLocalTooltip.bind(this);
+        this.hideLocalTooltip = this.hideLocalTooltip.bind(this);
+        this.handleAdhocTooltipJoyrideCallback = this.handleAdhocTooltipJoyrideCallback.bind(this);
+    }
+
+    showLocalTooltip(type){
+        var adhocTooltip = this.state.adhocTooltip;
+        if(type=='confirm'){
+            adhocTooltip.confirm.flag = true;
+        }
+        console.log(adhocTooltip);
+        this.setState({adhocTooltip: adhocTooltip});
+    }
+
+    hideLocalTooltip(type){
+        var adhocTooltip = this.state.adhocTooltip;
+        if(type=='confirm'){
+            adhocTooltip.confirm.flag = false;
+        }
+        
+        this.setState({adhocTooltip: adhocTooltip});
+    }
+
+    handleAdhocTooltipJoyrideCallback(data, tooltipType){
+        const {action,index,status,type} = data;
+        if([STATUS.FINISHED, STATUS.SKIPPED].includes(status)){
+            this.hideLocalTooltip(tooltipType);
+        }
     }
 
     handleChange(event, type) {
@@ -222,8 +264,31 @@ class AddStarEdgesView extends React.Component {
                         className="confirmEdgeButton"
                         >Confirm</Button>
                         :
-                        <p className="edgeEntityMessage">*Input one primary topic and atleast one secondary topic! <br/>
-                        To input a topic, type the topic name and press enter.</p>
+                        <div>
+                            <Joyride
+                            styles={{
+                                options: {
+                                arrowColor: '#e3ffeb',
+                                beaconSize: '4em',
+                                primaryColor: '#05878B',
+                                backgroundColor: '#e3ffeb',
+                                overlayColor: 'rgba(10,10,10, 0.4)',
+                                width: 900,
+                                zIndex: 1000,
+                                }
+                                }}
+                                steps={this.state.adhocTooltip.confirm.text}
+                                run = {this.state.adhocTooltip.confirm.flag}
+                                callback={(data)=>{this.handleAdhocTooltipJoyrideCallback(data,'confirm')}}                    
+                                /> 
+                            <Button
+                            variant="contained" 
+                            onClick={() => this.showLocalTooltip('confirm')}
+                            className="confirmEdgeButtonGreyed"
+                            >Confirm</Button> 
+                            <p className="edgeEntityMessage">*Input one primary topic and atleast one secondary topic! <br/>
+                            To input a topic, type the topic name and press enter.</p>
+                        </div>                        
                 }
                 
             </div>
