@@ -89,6 +89,7 @@ class UserBlocksComponent extends React.Component {
             isImagePaneOpen: false,
             urlPrefix: 'https://blprobe.com/view/',
             gameUrlPrefix: 'https://blprobe.com/game/',
+            gameResultsUrlPrefix: 'https://blprobe.com/gameResults/',
             tooltipText:{
                 entityPane:[                    
                     {                    
@@ -1178,6 +1179,7 @@ class UserBlocksComponent extends React.Component {
     renderShareScreen(){
         let url = this.state.urlPrefix + this.props.bId;
         let gameUrl = this.state.gameUrlPrefix + this.props.bId;
+        let gameUrlResults = this.state.gameResultsUrlPrefix + this.props.bId;
         return (
             <Paper elevation={6}>
                 <div className='userblocks-share-container'>                    
@@ -1187,6 +1189,12 @@ class UserBlocksComponent extends React.Component {
                     <div className="userblocks-share-url-div">
                         <a href={gameUrl} target="_blank" className="userblocks-share-url">{gameUrl}</a>
                     </div>  
+                    <div className='userblocks-share-section-heading'>
+                        Public link to view game results                     
+                    </div>
+                    <div className="userblocks-share-url-div">
+                        <a href={gameUrlResults} target="_blank" className="userblocks-share-url">{gameUrlResults}</a>
+                    </div> 
                     <Button 
                         color="primary"
                         variant="contained"
