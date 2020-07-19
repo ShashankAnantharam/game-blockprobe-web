@@ -219,7 +219,7 @@ class AddCliqueEdgesView extends React.Component {
                             });
                         }}
                         renderInput={(params) => (
-                        <TextField {...params} variant="outlined" label="Secondary topics" />
+                        <TextField {...params} variant="outlined" label="Topics" />
                         )}
                     />
                 </div>
