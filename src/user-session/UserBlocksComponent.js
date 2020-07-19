@@ -25,6 +25,7 @@ import * as Utils from '../common/utilSvc';
 import SingleEntityView from '../view/Draft/SingleEntityView/SingleEntityView';
 import AddEdgeView from  '../view/Draft/AddEdgeView/AddEdgeView';
 import AddStarEdgesView from  '../view/Draft/AddEdgeView/AddStarEdgesView';
+import AddCliqueEdgesView from  '../view/Draft/AddEdgeView/AddCliqueEdges';
 import AddSingleTopicView from  '../view/Draft/AddEdgeView/AddSingleTopic';
 import AddTimeView from '../view/Draft/AddTimeView/AddTimeView';
 
@@ -1458,6 +1459,14 @@ class UserBlocksComponent extends React.Component {
                                         label={'Multiple connections'}
                                         toggleChange = {this.toggleGraphOptionStyle}
                                         />
+                                </div>
+                                <div>
+                                    <Checkbox 
+                                        value={'clique_connections'}
+                                        isChecked={this.state.graphViewAddType == 'clique_connections'}
+                                        label={'Clique connections'}
+                                        toggleChange = {this.toggleGraphOptionStyle}
+                                        />
                                 </div>   
                             </div>
                             {this.state.graphViewAddType == 'single_connection'?
@@ -1474,6 +1483,19 @@ class UserBlocksComponent extends React.Component {
                             }
                             {this.state.graphViewAddType == 'star_connections'?
                                 <AddStarEdgesView
+                                    entityPane = {this.state.entityPaneList}                                        
+                                    commitBlockToBlockprobe = {this.props.commitBlockToBlockprobe}
+                                    investigationGraph = {this.props.investigationGraph}
+                                    lastIndexDraftBlocks = {this.state.lastIndexDraftBlocks}
+                                    lastIndex = {this.props.lastIndex}
+                                    commitMultipleBlocksToBlockprobe = {this.props.commitMultipleBlocksToBlockprobe}
+                                    bId = {this.props.bId}
+                                />
+                                :
+                                null
+                            }
+                            {this.state.graphViewAddType == 'clique_connections'?
+                                <AddCliqueEdgesView
                                     entityPane = {this.state.entityPaneList}                                        
                                     commitBlockToBlockprobe = {this.props.commitBlockToBlockprobe}
                                     investigationGraph = {this.props.investigationGraph}
