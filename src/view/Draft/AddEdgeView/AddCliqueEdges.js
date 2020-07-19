@@ -91,11 +91,13 @@ class AddCliqueEdgesView extends React.Component {
         if(shouldUpdate){
             if(type=="connection-description"){
                 this.setState({summary: event.target.value});
+                /*
                 ReactGA.event({
                     category: 'Add clique edge',
                     action: 'Add clique edge desc '+ String(this.props.bId),
                     label: 'Add clique edge desc '+ String(this.props.bId)
                   });
+                */
             }
             else  if(type=="entityA"){
                 this.setState({entityA: event.target.value});

@@ -89,11 +89,13 @@ class AddEdgeView extends React.Component {
         shouldUpdate = Utils.shouldUpdateText(str, ['\n','\t']);
         if(shouldUpdate){
             if(type=="connection-description"){
+                /*
                 ReactGA.event({
                     category: 'Add single edge',
                     action: 'Add single edge desc '+ String(this.props.bId),
                     label: 'Add single edge desc '+ String(this.props.bId)
                   });
+                  */
                 this.setState({summary: event.target.value});
             }
             else  if(type=="entityA"){

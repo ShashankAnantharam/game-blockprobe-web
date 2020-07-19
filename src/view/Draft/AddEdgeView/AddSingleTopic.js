@@ -47,11 +47,13 @@ class AddSingleTopicView extends React.Component {
         shouldUpdate = Utils.shouldUpdateText(str, ['\n','\t']);
         if(shouldUpdate){
             if(type=="connection-description"){
+                /*
                 ReactGA.event({
                     category: 'Add single entity',
                     action: 'Add single entity desc '+ String(this.props.bId),
                     label: 'Add single entity desc '+ String(this.props.bId)
                   });
+                  */
                 this.setState({summary: event.target.value});
             }
             else  if(type=="entityA"){
