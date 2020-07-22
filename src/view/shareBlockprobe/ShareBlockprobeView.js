@@ -3,6 +3,7 @@ import './ShareBlockprobe.css';
 import * as firebase from 'firebase';
 import 'firebase/firestore';
 import Loader from 'react-loader-spinner';
+import LimitSharedUsersComponent from './LimitSharedUsers';
 import Button from '@material-ui/core/Button';
 import * as Utils from '../../common/utilSvc';
 import * as DbUtils from "../../common/dbSvc";
@@ -65,7 +66,7 @@ class ShareBlockprobeComponent extends React.Component {
           didPublishImagesInSession: false,
           unpublishingBlocks: false,
           unpublishingImages: false,
-          isBlockprobeAlreadyPublished: false,
+          isBlockprobeAlreadyPublished: false,          
           adhocTooltip:{
             publicLink:{
                 flag: false,
@@ -92,15 +93,15 @@ class ShareBlockprobeComponent extends React.Component {
         }
       }
 
-      this.renderShareScreen = this.renderShareScreen.bind(this);
-      this.showLocalTooltip = this.showLocalTooltip.bind(this);
-      this.unpublishStory = this.unpublishStory.bind(this);
-      this.publishStory = this.publishStory.bind(this);  
-      this.addStoryToWall = this.addStoryToWall.bind(this);    
-      this.removeStoryFromWall = this.removeStoryFromWall.bind(this);
-      this.isAnyOptionClicked = this.isAnyOptionClicked.bind(this);
-      this.isStoryAlreadyAdded = this.isStoryAlreadyAdded.bind(this);
-      this.handleAdhocTooltipJoyrideCallback = this.handleAdhocTooltipJoyrideCallback.bind(this);            
+        this.renderShareScreen = this.renderShareScreen.bind(this);
+        this.showLocalTooltip = this.showLocalTooltip.bind(this);
+        this.unpublishStory = this.unpublishStory.bind(this);
+        this.publishStory = this.publishStory.bind(this);  
+        this.addStoryToWall = this.addStoryToWall.bind(this);    
+        this.removeStoryFromWall = this.removeStoryFromWall.bind(this);
+        this.isAnyOptionClicked = this.isAnyOptionClicked.bind(this);
+        this.isStoryAlreadyAdded = this.isStoryAlreadyAdded.bind(this);        
+        this.handleAdhocTooltipJoyrideCallback = this.handleAdhocTooltipJoyrideCallback.bind(this);            
     }
 
     isStoryAlreadyAdded(){
@@ -253,6 +254,11 @@ class ShareBlockprobeComponent extends React.Component {
                                         callback={(data)=>{this.handleAdhocTooltipJoyrideCallback(data,'socialMedia')}}                    
                                         /> 
                         </a> 
+                    </div>
+                        
+                    <div className='left-margin-10'>
+                        <LimitSharedUsersComponent
+                        />
                     </div>
                     <div className='shareContainer'>
                         <div className='shareIcons'>

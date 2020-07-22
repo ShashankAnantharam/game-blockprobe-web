@@ -34,6 +34,10 @@
     font-size:0.85em;    
 }
 
+.left-margin-10{
+    margin-left:10px;
+}
+
 .share-tooltips{
     cursor: pointer; 
     color: rgb(0, 76, 78);
