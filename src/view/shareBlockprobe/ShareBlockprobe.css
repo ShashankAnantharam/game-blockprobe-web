@@ -38,6 +38,10 @@
     margin-left:10px;
 }
 
+.left-margin-0{
+    margin-left: 0;
+}
+
 .share-tooltips{
     cursor: pointer; 
     color: rgb(0, 76, 78);

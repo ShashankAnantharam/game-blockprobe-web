@@ -13,6 +13,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
+import Switch from '@material-ui/core/Switch';
 import * as Utils from '../../common/utilSvc';
 import * as DbUtils from "../../common/dbSvc";
 import { isNullOrUndefined } from 'util';
@@ -28,6 +29,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
     constructor(props){
       super(props);
+      //isUserLimited, userList
 
       this.state={
         addingUser: false,
@@ -47,6 +49,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         this.clickUser = this.clickUser.bind(this);
         this.removeUser = this.removeUser.bind(this);
         this.toggleDialog = this.toggleDialog.bind(this);
+        this.changeUserLimitedState = this.changeUserLimitedState.bind(this);
     }
 
     toggleDialog(value, type){
@@ -173,10 +176,33 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         );
     }
 
+    changeUserLimitedState(event){
+        //Change db status here for user limited
+
+        console.log(event.target.checked);
+
+    }
+
     render(){
         return (
             <div>
-                
+                <div className="left-margin-0 share-section-heading">
+                    Limit users who can play your game
+                    <Switch
+                        checked={!(!(this.props.isUserLimited))}
+                        onChange={this.changeUserLimitedState}
+                        name="isUserLimited"
+                        color="primary"
+                    />
+                </div>
+
+                {this.props.isUserLimited?
+                    <div>
+                        {this.renderUserList(this.props.userList)}
+                    </div>
+                    :
+                    null
+                }             
             </div>
         );
     }
