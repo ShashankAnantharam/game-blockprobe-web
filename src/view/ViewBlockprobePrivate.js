@@ -60,6 +60,7 @@ class ViewBlockprobePrivateComponent extends React.Component {
             menuBarOpen: false,
             selectedVisualisation: "contributions",
             lastTitleIndex: 0,
+            publicStatus: {},
             coUsers: {},
             multiSelectEntityList: [
                 {
@@ -120,6 +121,7 @@ class ViewBlockprobePrivateComponent extends React.Component {
         }
 
         this.bpDetailsDoc = null;
+        this.publicStatusDoc = null;
         this.bpUsersRef = null;
         this.bpLangRef = null;
 
@@ -931,6 +933,23 @@ class ViewBlockprobePrivateComponent extends React.Component {
         });
     }
 
+    getPublicShareStatus(){
+        let scope  = this;
+
+        this.publicStatusDoc = firebase.firestore().collection("publicStatus").
+        doc(this.props.bId);
+        
+        this.publicStatusDoc.onSnapshot((snapshot) => {
+            let publicStatus = {};
+            if(snapshot.exists){
+                publicStatus = snapshot.data();
+            }
+            scope.setState({
+                publicStatus: publicStatus
+            }); 
+        });        
+    }
+
 
     async componentDidMount(){        
         this.bpDetailsDoc = firebase.firestore().collection("Blockprobes").
@@ -947,6 +966,8 @@ class ViewBlockprobePrivateComponent extends React.Component {
                 isloading: loadingState
             });
         });
+
+        this.getPublicShareStatus();
 
         this.getBlockTree();        
 
@@ -1009,6 +1030,9 @@ class ViewBlockprobePrivateComponent extends React.Component {
     componentWillUnmount(){
         var unsub = this.bpDetailsDoc.onSnapshot(() => {});
         unsub();
+
+        var unsubPublicShare = this.publicStatusDoc.onSnapshot(() => {});
+        unsubPublicShare();
 
         if(!isNullOrUndefined(this.bpUsersRef))
             this.bpUsersRef.off();
@@ -1131,6 +1155,7 @@ class ViewBlockprobePrivateComponent extends React.Component {
                     title = {this.state.blockprobeTitle}
                     updatePosts = {this.props.updatePosts}
                     setNewVisualisation = {this.setNewVisualisation}
+                    publicStatus = {this.state.publicStatus}
                     />
                 </div>
             )

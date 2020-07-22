@@ -258,6 +258,9 @@ class ShareBlockprobeComponent extends React.Component {
                         
                     <div className='left-margin-10'>
                         <LimitSharedUsersComponent
+                            bpId = {this.props.bpId}
+                            userList = {[]}
+                            publicStatus = {this.props.publicStatus}
                         />
                     </div>
                     <div className='shareContainer'>

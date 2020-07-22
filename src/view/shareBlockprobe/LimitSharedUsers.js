@@ -29,7 +29,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
     constructor(props){
       super(props);
-      //isUserLimited, userList
+      //isUserLimited, userList, publicStatus
 
       this.state={
         addingUser: false,
@@ -178,18 +178,28 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
     changeUserLimitedState(event){
         //Change db status here for user limited
-
-        console.log(event.target.checked);
-
+        let publicStatus = JSON.parse(JSON.stringify(this.props.publicStatus));
+        publicStatus.isUserLimited = event.target.checked;
+        firebase.firestore().collection("publicStatus").doc(this.props.bpId).set(publicStatus);
     }
 
     render(){
+
+        let isUserLimited = false;
+        let userList = [];
+        if(this.props.publicStatus.isUserLimited){
+            isUserLimited = this.props.publicStatus.isUserLimited;
+            if(this.props.publicStatus.userList){
+                userList = this.props.publicStatus.userList;
+            }
+        }
+
         return (
             <div>
                 <div className="left-margin-0 share-section-heading">
                     Limit users who can play your game
                     <Switch
-                        checked={!(!(this.props.isUserLimited))}
+                        checked={!(!(isUserLimited))}
                         onChange={this.changeUserLimitedState}
                         name="isUserLimited"
                         color="primary"
@@ -198,7 +208,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
                 {this.props.isUserLimited?
                     <div>
-                        {this.renderUserList(this.props.userList)}
+                        {this.renderUserList(userList)}
                     </div>
                     :
                     null
