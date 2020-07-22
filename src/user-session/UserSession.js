@@ -11,9 +11,7 @@ import ViewBlockprobePrivateComponent from '../view/ViewBlockprobePrivate';
 import Loader from 'react-loader-spinner';
 import GoogleFontLoader from 'react-google-font-loader';
 import Img from 'react-image';
-import JournalistBackground from "./backgrounds/Journalist.jpg";
 import TeacherBackground from "./backgrounds/Teacher.jpg";
-import LawmakerBackground from "./backgrounds/lawmaker.jpg";
 import MainLogo from "./icons/BlockprobeLogo.png";
 import UserWall from "./userWall/UserWall";
 import UserNotifications from "./userNotif/UserNotifications";
@@ -69,7 +67,7 @@ class UserSession extends React.Component {
                 politician:{
                     logo: '',
                     text: 'As a lawmaker, you can visualise your proposals and laws using blockprobe, and better engage your constituents with your proposals.',
-                    background: LawmakerBackground
+                    background: TeacherBackground
                 },
                 teacher:{
                     logo: '',
@@ -748,7 +746,7 @@ class UserSession extends React.Component {
                     <div style={{height:'100vh',overflow:'auto'}}>
                         <img class="background-image teacherImage" src={TeacherBackground}></img>
                         <img class="background-image journalistImage" src={TeacherBackground}></img>
-                        <img class="background-image politicianImage" src={LawmakerBackground}></img>
+                        <img class="background-image politicianImage" src={TeacherBackground}></img>
                         <GoogleFontLoader
                             fonts={[
                                 {
