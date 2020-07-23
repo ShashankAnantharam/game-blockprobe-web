@@ -16,6 +16,8 @@ import Slide from '@material-ui/core/Slide';
 import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import SearchIcon from '@material-ui/icons/Search';
 import * as XLSX from 'xlsx';
 import * as Utils from '../../common/utilSvc';
 import * as DbUtils from "../../common/dbSvc";
@@ -114,7 +116,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         this.toggleDialog(true,'user');
     }
 
-    renderUserList(coUsers){
+    renderUserList(coUsers, userListFull){
         let renderStr = null;
         if(!isNullOrUndefined(coUsers)){
             renderStr = Object.keys(coUsers).map((key) => {
@@ -124,8 +126,12 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         }
         return (
             <div style={{marginLeft:'10px', marginTop:'1em'}}>
-                <h4 style={{marginBottom:'0px'}}>Users who can view your public link</h4>
-                {this.renderSearchViewer()}
+                <h4 style={{marginBottom:'10px'}}>Users who can view your public link</h4>
+                {userListFull && userListFull.length>0?
+                    this.renderSearchViewer()
+                    :
+                    null
+                }
                 <div className="shareViewerListContainer">
                     <List>
                         {renderStr}
@@ -203,13 +209,20 @@ const Transition = React.forwardRef(function Transition(props, ref) {
                         <div className="search-textfield-container">
                             <TextField 
                             type="text"
-                            variant="outlined"
+                            variant="filled"
                             multiline
                             label = "Search viewer"
                             value={this.state.searchUserId}
                             onChange={(e) => { this.handleChange(e,"search")}}
                             rowsMax="1"
                             rows="1"
+                            InputProps={{
+                                startAdornment: (
+                                  <InputAdornment position="start">
+                                    <SearchIcon />
+                                  </InputAdornment>
+                                ),
+                            }}
                             style={{
                                 background: 'white',
                                 marginTop:'6px',
@@ -510,7 +523,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
                         {this.renderUserDialog()}
                         {userList.length > 0?
                             <div>
-                                {this.renderUserList(userListRender)}
+                                {this.renderUserList(userListRender, userList)}
                             </div>
                             :
                             null
