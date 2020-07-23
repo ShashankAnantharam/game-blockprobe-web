@@ -232,6 +232,14 @@ class ShareBlockprobeComponent extends React.Component {
                     </div>
                     <div className="share-url-div">
                         <a href={gameUrlResults} target="_blank" className="share-url">{gameUrlResults}</a>
+                    </div>
+                    <div className='left-margin-10'>
+                        <LimitSharedUsersComponent
+                            bpId = {this.props.bpId}
+                            userList = {[]}
+                            publicStatus = {this.props.publicStatus}
+                            uId = {this.props.uId}
+                        />
                     </div>              
                     <div className='share-section-heading'>
                         Share Link on Social Media
@@ -254,15 +262,7 @@ class ShareBlockprobeComponent extends React.Component {
                                         callback={(data)=>{this.handleAdhocTooltipJoyrideCallback(data,'socialMedia')}}                    
                                         /> 
                         </a> 
-                    </div>
-                        
-                    <div className='left-margin-10'>
-                        <LimitSharedUsersComponent
-                            bpId = {this.props.bpId}
-                            userList = {[]}
-                            publicStatus = {this.props.publicStatus}
-                        />
-                    </div>
+                    </div>                    
                     <div className='shareContainer'>
                         <div className='shareIcons'>
                             <FacebookShareButton                        

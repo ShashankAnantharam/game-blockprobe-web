@@ -252,7 +252,10 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         if(!isNullOrUndefined(user) && !isNullOrUndefined(user.role) && user.role=="INVITED"){
             //console.log('remove invitation');
 
-            let list = []; 
+            let list = [{
+                id: this.props.uId,
+                role: "ADMIN"
+            }]; 
             if(this.props.publicStatus.userList){
                 list = this.props.publicStatus.userList;
             }
@@ -282,7 +285,10 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
     async addUserToViewList(){
         let userId = this.state.viewerId;
-        let list = []; 
+        let list = [{
+            id: this.props.uId,
+            role: "ADMIN"
+        }]; 
         if(this.props.publicStatus.userList){
             list = this.props.publicStatus.userList;
         }
@@ -323,9 +329,11 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     }
 
     render(){
-
         let isUserLimited = false;
-        let userList = [];
+        let userList = [{
+            id: this.props.uId,
+            role: "ADMIN"
+        }];
         if(this.props.publicStatus.isUserLimited){
             isUserLimited = this.props.publicStatus.isUserLimited;
             if(this.props.publicStatus.userList){
