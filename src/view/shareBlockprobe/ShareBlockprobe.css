@@ -4,7 +4,11 @@
     margin-right: 1em;
     max-height: 65vh;
     overflow-y: auto;
-    margin-top:10px;
+}
+
+.search-textfield-container{
+    margin-top: 10px;
+    margin-right: 1em;
 }
 
 .shareContainer{

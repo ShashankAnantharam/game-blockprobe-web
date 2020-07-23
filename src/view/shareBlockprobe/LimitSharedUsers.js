@@ -43,6 +43,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         userDialog: false,
         viewerId: '',
         selectedUser: null,
+        searchUserId: null,
         dialogText:{
             selected:{
                 title: null,
@@ -54,6 +55,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         this.renderUser = this.renderUser.bind(this);
         this.renderUserDialog = this.renderUserDialog.bind(this);
         this.renderAddViewersExcel = this.renderAddViewersExcel.bind(this);
+        this.renderSearchViewer=this.renderSearchViewer.bind(this);
         this.clickUser = this.clickUser.bind(this);
         this.removeViewer = this.removeViewer.bind(this);
         this.toggleDialog = this.toggleDialog.bind(this);
@@ -62,7 +64,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         this.handleChangeFile = this.handleChangeFile.bind(this);
         this.cancelUserCurrent = this.cancelUserCurrent.bind(this);
         this.addUserToViewList = this.addUserToViewList.bind(this);
-        this.addUsersToViewerList = this.addUsersToViewerList.bind(this);
+        this.addUsersToViewerList = this.addUsersToViewerList.bind(this);        
     }
 
     toggleDialog(value, type){
@@ -123,6 +125,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         return (
             <div style={{marginLeft:'10px', marginTop:'1em'}}>
                 <h4 style={{marginBottom:'0px'}}>Users who can view your public link</h4>
+                {this.renderSearchViewer()}
                 <div className="shareViewerListContainer">
                     <List>
                         {renderStr}
@@ -175,7 +178,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
         var shouldUpdate = false;
         let str = event.target.value;
-        if(type=='viewer' && Utils.shouldUpdateText(str,['\n','\t'])){
+        if(Utils.shouldUpdateText(str,['\n','\t'])){
             shouldUpdate = true;
         }
 
@@ -185,8 +188,41 @@ const Transition = React.forwardRef(function Transition(props, ref) {
                 var id = event.target.value;
                 this.setState({viewerId: id});
             }
+            else if(type=="search"){
+                var id = event.target.value;
+                this.setState({searchUserId: id});
+            } 
         }
       }
+
+    renderSearchViewer(){
+        return(
+            <div>
+                <form>
+                    <label>
+                        <div className="search-textfield-container">
+                            <TextField 
+                            type="text"
+                            variant="outlined"
+                            multiline
+                            label = "Search viewer"
+                            value={this.state.searchUserId}
+                            onChange={(e) => { this.handleChange(e,"search")}}
+                            rowsMax="1"
+                            rows="1"
+                            style={{
+                                background: 'white',
+                                marginTop:'6px',
+                                marginRight:'1em',
+                                marginBottom:'0',
+                                width: '100%'
+                                }}/>
+                        </div>                        
+                    </label>
+                    </form> 
+            </div>
+        )
+    }
 
     renderAddViewers(){
         return (
@@ -442,6 +478,21 @@ const Transition = React.forwardRef(function Transition(props, ref) {
             }
         }
 
+        let scope = this;
+        let userListRender = userList.filter((data) => {
+            if(scope.state.searchUserId == null || scope.state.searchUserId.trim().length==0)
+                return data;
+            else if(data.id.toLowerCase().includes(scope.state.searchUserId.trim().toLowerCase())){
+                return data;
+            }
+        })
+
+        userListRender.sort(function(a,b){
+            if(a.id < b.id)
+                return -1;
+            return 1;
+        });
+
         return (
             <div>
                 <div className="left-margin-0 share-section-heading">
@@ -459,7 +510,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
                         {this.renderUserDialog()}
                         {userList.length > 0?
                             <div>
-                                {this.renderUserList(userList)}
+                                {this.renderUserList(userListRender)}
                             </div>
                             :
                             null
