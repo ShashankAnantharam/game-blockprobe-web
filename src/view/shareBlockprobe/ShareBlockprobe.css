@@ -1,3 +1,12 @@
+.shareViewerListContainer{
+    border:1px solid black;
+    word-wrap: break-word;
+    margin-right: 1em;
+    max-height: 65vh;
+    overflow-y: auto;
+    margin-top:10px;
+}
+
 .shareContainer{
     display:flex;
     margin-bottom: 45px;

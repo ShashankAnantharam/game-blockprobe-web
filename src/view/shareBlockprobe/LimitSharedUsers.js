@@ -123,7 +123,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         return (
             <div style={{marginLeft:'10px', marginTop:'1em'}}>
                 <h4 style={{marginBottom:'0px'}}>Users who can view your public link</h4>
-                <div className="userListContainer" style={{marginTop: '0px'}}>
+                <div className="shareViewerListContainer">
                     <List>
                         {renderStr}
                     </List>
@@ -200,7 +200,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
                             type="text"
                             variant="outlined"
                             multiline
-                            placeholder = "Email or phonenumber"
+                            placeholder = "UserId (Email/phonenumber)"
                             value={this.state.viewerId}
                             onChange={(e) => { this.handleChange(e,"viewer")}}
                             rowsMax="1"
@@ -407,7 +407,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     renderAddViewersExcel(){
         return (
             <div style={{marginLeft:'10px', marginTop:'1em'}}>
-                <h4 style={{marginBottom: '10px'}}>Upload excel file with viewer userids</h4>
+                <h4 style={{marginBottom: '10px'}}>Upload excel file with viewer user-ids</h4>
                 <h5 style={{marginTop: '0px'}}>User id must be the first column</h5>
                 <form>
                     <label>
