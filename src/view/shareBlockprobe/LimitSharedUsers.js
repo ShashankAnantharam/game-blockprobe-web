@@ -14,12 +14,15 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import Switch from '@material-ui/core/Switch';
+import TextField from '@material-ui/core/TextField';
 import * as Utils from '../../common/utilSvc';
 import * as DbUtils from "../../common/dbSvc";
 import { isNullOrUndefined } from 'util';
 import { timingSafeEqual } from 'crypto';
 import Info from '@material-ui/icons/Info';
 import Joyride,{ ACTIONS, EVENTS, STATUS } from 'react-joyride';
+
+const LIMIT = 100;
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -36,6 +39,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         dialogType: null,
         dialog: false,
         userDialog: false,
+        viewerId: '',
+        selectedUser: null,
         dialogText:{
             selected:{
                 title: null,
@@ -47,9 +52,12 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         this.renderUser = this.renderUser.bind(this);
         this.renderUserDialog = this.renderUserDialog.bind(this);
         this.clickUser = this.clickUser.bind(this);
-        this.removeUser = this.removeUser.bind(this);
+        this.removeViewer = this.removeViewer.bind(this);
         this.toggleDialog = this.toggleDialog.bind(this);
         this.changeUserLimitedState = this.changeUserLimitedState.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.cancelUserCurrent = this.cancelUserCurrent.bind(this);
+        this.addUserToViewList = this.addUserToViewList.bind(this);
     }
 
     toggleDialog(value, type){
@@ -92,31 +100,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         )
     }
 
-    async removeUser(){
-        let user = this.state.selectedUser;
-        if(!isNullOrUndefined(user.role) && user.role=="INVITED"){
-            //console.log('remove invitation');
-
-            let notification = {
-                id: this.props.bpId,
-                permit: 'INVITED'
-            }
-            let userId = user.id;
-            let uIdHash = this.state.shajs('sha256').update(userId).digest('hex');
-            //console.log(notification);
-            console.log(userId);
-            console.log(uIdHash);
-
-            // TODO change
-            // await DbUtils.removeInviteStoryNotification(notification,userId,uIdHash);
-            // await DbUtils.removeNotification(notification,userId);
-
-            this.setState({
-                userDialog: false
-            });
-        }
-    }
-
     async clickUser(user){
         await this.setState({
             selectedUser: user
@@ -134,8 +117,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         }
         return (
             <div style={{marginLeft:'10px', marginTop:'1em'}}>
-                <h3>User list</h3>
-                <div className="userListContainer">
+                <h4 style={{marginBottom:'0px'}}>Users who can view your public link</h4>
+                <div className="userListContainer" style={{marginTop: '0px'}}>
                     <List>
                         {renderStr}
                     </List>
@@ -162,7 +145,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
                         </DialogContent>
                         <DialogActions>
                         {!isNullOrUndefined(selectedUser) && selectedUser.role == "INVITED"?
-                            <Button onClick={() => this.removeUser()} color="primary">
+                            <Button onClick={() => this.removeViewer()} color="primary">
                                 Remove
                             </Button>
                             :
@@ -181,6 +164,162 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         let publicStatus = JSON.parse(JSON.stringify(this.props.publicStatus));
         publicStatus.isUserLimited = event.target.checked;
         firebase.firestore().collection("publicStatus").doc(this.props.bpId).set(publicStatus);
+    }
+
+    handleChange(event, type) {
+
+        var shouldUpdate = false;
+        let str = event.target.value;
+        if(type=='viewer' && Utils.shouldUpdateText(str,['\n','\t'])){
+            shouldUpdate = true;
+        }
+
+        if(shouldUpdate){
+            
+            if(type=="viewer"){
+                var id = event.target.value;
+                this.setState({viewerId: id});
+            }
+        }
+      }
+
+    renderAddViewers(){
+        return (
+            <div>
+                <div style={{marginLeft:'10px', marginTop:'1em'}}>
+                    <h4 style={{marginBottom:'5px'}}>Add Users who can view your public link</h4>
+                    <form>
+                    <label>
+                        <div className="settings-textfield-container">
+                            <TextField 
+                            type="text"
+                            variant="outlined"
+                            multiline
+                            placeholder = "Email or phonenumber"
+                            value={this.state.viewerId}
+                            onChange={(e) => { this.handleChange(e,"viewer")}}
+                            rowsMax="1"
+                            rows="1"
+                            style={{
+                                background: 'white',
+                                marginTop:'6px',
+                                marginBottom:'6px',
+                                width: '100%'
+                                }}/>
+                        </div>                        
+                    </label>
+                    </form>                    
+                    {this.state.viewerId.trim()!='' && !this.state.addingUser?
+                            <div className="blockprobe-settings-criterion-options-container">
+                                <Button 
+                                variant="contained"
+                                className="saveBlockProbeSettingsButton" 
+                                style={{marginTop:'1em'}}
+                                onClick={(e) => {this.addUserToViewList()}}>
+                                    <div>Confirm</div>
+                                </Button>
+                                <Button
+                                variant="contained" 
+                                className="cancelBlockProbeSettingsButton" 
+                                style={{marginTop:'1em'}}
+                                onClick={(e) => {this.cancelUserCurrent()}}>
+                                    <div>Cancel</div>
+                                </Button>
+                            </div>
+                            :
+                            null
+                        }
+                    {this.state.addingUser?
+                        <div style={{width:'50px'}}>
+                            <Loader 
+                            type="TailSpin"
+                            color="#00BFFF"
+                            height="50"	
+                            width="50"
+                            /> 
+                        </div>
+                        :
+                        null
+                    }           
+                </div>
+            </div>
+        )
+    }
+
+    async removeViewer(){
+        let user = this.state.selectedUser;
+        let userId = user.id;
+        if(!isNullOrUndefined(user) && !isNullOrUndefined(user.role) && user.role=="INVITED"){
+            //console.log('remove invitation');
+
+            let list = []; 
+            if(this.props.publicStatus.userList){
+                list = this.props.publicStatus.userList;
+            }
+            let newList = [];
+            for(let i=0; i<list.length; i++){
+                if(list[i].id!=userId)
+                {
+                    newList.push(list[i]);
+                }
+            }
+
+            let publicStatus = JSON.parse(JSON.stringify(this.props.publicStatus));
+            publicStatus['userList'] = newList;
+            this.setState({
+                addingUser: true
+            });
+            await firebase.firestore().collection("publicStatus").doc(this.props.bpId).set(publicStatus);    
+            this.setState({
+                addingUser: false
+            });
+
+            this.setState({
+                userDialog: false
+            });
+        }
+    }
+
+    async addUserToViewList(){
+        let userId = this.state.viewerId;
+        let list = []; 
+        if(this.props.publicStatus.userList){
+            list = this.props.publicStatus.userList;
+        }
+        let isUserPresent = false;
+        for(let i=0; i<list.length; i++){
+            if(list[i].id==userId)
+            {
+                isUserPresent = true;
+                break;
+            }
+        }
+        if(!isUserPresent && list.length<LIMIT){
+            list.push({
+                id: userId,
+                role: "INVITED"
+            });
+            let publicStatus = JSON.parse(JSON.stringify(this.props.publicStatus));
+            publicStatus['userList'] = list;
+            this.setState({
+                addingUser: true
+            });
+            await firebase.firestore().collection("publicStatus").doc(this.props.bpId).set(publicStatus);    
+            this.setState({
+                viewerId: '',
+                addingUser: false
+            });
+        }
+        else{
+            this.cancelUserCurrent();
+        }
+
+    }
+
+    cancelUserCurrent(){
+        this.setState({
+            viewerId: ''
+        })
     }
 
     render(){
@@ -206,9 +345,17 @@ const Transition = React.forwardRef(function Transition(props, ref) {
                     />
                 </div>
 
-                {this.props.isUserLimited?
+                {isUserLimited?
                     <div>
-                        {this.renderUserList(userList)}
+                        {this.renderUserDialog()}
+                        {userList.length > 0?
+                            <div>
+                                {this.renderUserList(userList)}
+                            </div>
+                            :
+                            null
+                        }
+                        {this.renderAddViewers()}
                     </div>
                     :
                     null
