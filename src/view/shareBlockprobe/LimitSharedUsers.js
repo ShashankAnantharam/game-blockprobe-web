@@ -236,7 +236,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
                             type="text"
                             variant="outlined"
                             multiline
-                            placeholder = "UserId (Email/phonenumber)"
+                            label = "UserId (Email/Phonenumber)"
                             value={this.state.viewerId}
                             onChange={(e) => { this.handleChange(e,"viewer")}}
                             rowsMax="1"
