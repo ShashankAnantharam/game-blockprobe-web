@@ -90,7 +90,7 @@ class UserBlocksComponent extends React.Component {
             isImagePaneOpen: false,
             urlPrefix: 'https://blprobe.com/view/',
             gameUrlPrefix: 'https://blprobe.com/game/',
-            gameResultsUrlPrefix: 'https://blprobe.com/gameResults/',
+            gameResultsUrlPrefix: 'https://blprobe.com/leaderboard/',
             tooltipText:{
                 entityPane:[                    
                     {                    

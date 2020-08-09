@@ -59,7 +59,7 @@ class ShareBlockprobeComponent extends React.Component {
       this.state = {
           urlPrefix: 'https://blprobe.com/view/',
           gameUrlPrefix: 'https://blprobe.com/game/',
-          gameResultsUrlPrefix: 'https://blprobe.com/gameResults/',
+          gameResultsUrlPrefix: 'https://blprobe.com/leaderboard/',
           blocksUploaded: true,
           imageUploaded: true,
           didPublishBlocksInSession: false,
