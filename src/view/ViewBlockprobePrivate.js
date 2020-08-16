@@ -55,6 +55,7 @@ class ViewBlockprobePrivateComponent extends React.Component {
             entityChanges: {},
             timeline: [],
             summaryList: [],
+            partsOfImageList: [],
             latestBlock: null,
             selectedBlockSidebarOpen: false,
             menuBarOpen: false,
@@ -158,7 +159,20 @@ class ViewBlockprobePrivateComponent extends React.Component {
 
         this.commitBlockToBlockprobe = this.commitBlockToBlockprobe.bind(this);
         this.commitMultipleBlocksToBlockprobe = this.commitMultipleBlocksToBlockprobe.bind(this);
-        this.commitSingleBlockToBlockprobe = this.commitSingleBlockToBlockprobe.bind(this);          
+        this.commitSingleBlockToBlockprobe = this.commitSingleBlockToBlockprobe.bind(this);         
+        
+        this.createPartsOfImage = this.createPartsOfImage.bind(this);
+    }
+
+    createPartsOfImage(blockList){
+        var pIList = [];
+        blockList.forEach((blockKey) => {
+            var block = this.state.blockTree[blockKey];
+            if(!isNullOrUndefined(block.lineCoord)){
+                pIList.push(block);
+            }
+        }); 
+        this.setState({partsOfImageList: pIList});     
     }
 
     finishBuildingStoryTooltip(){
@@ -808,6 +822,7 @@ class ViewBlockprobePrivateComponent extends React.Component {
 
         this.createInvestigationGraph(finalBlockList);
         this.createSummaryList(finalBlockList);
+        this.createPartsOfImage(finalBlockList);
 
         // console.log(finalBlockList);               
     }
@@ -1120,6 +1135,7 @@ class ViewBlockprobePrivateComponent extends React.Component {
                     multiSelectEntityList = {this.state.multiSelectEntityList}
                     timeline={this.state.timeline}  
                     summaryBlocks = {this.state.summaryList}
+                    partsOfImageList = {this.state.partsOfImageList}
                     lastIndex = {this.state.lastTitleIndex} 
                     lang = {this.state.lang}          
                     />

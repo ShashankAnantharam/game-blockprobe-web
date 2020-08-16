@@ -28,6 +28,7 @@ import AddStarEdgesView from  '../view/Draft/AddEdgeView/AddStarEdgesView';
 import AddCliqueEdgesView from  '../view/Draft/AddEdgeView/AddCliqueEdges';
 import AddSingleTopicView from  '../view/Draft/AddEdgeView/AddSingleTopic';
 import AddTimeView from '../view/Draft/AddTimeView/AddTimeView';
+import AddDissectPictureView from '../view/Draft/AddDissectPictureView/AddDissectPictureView';
 
 import Joyride from 'react-joyride';
 import Checkbox from '../view/Draft/Checkbox';
@@ -1439,6 +1440,7 @@ class UserBlocksComponent extends React.Component {
                     <TabList>
                         <Tab>Mindmap</Tab>
                         <Tab>Timeline</Tab>
+                        <Tab>Dissect</Tab>
                     </TabList>
 
                     <TabPanel>
@@ -1563,6 +1565,18 @@ class UserBlocksComponent extends React.Component {
                             :
                             null
                             }
+                    </TabPanel>
+
+                    <TabPanel>
+                        <div>
+                            <AddDissectPictureView
+                                bId = {this.props.bId}
+                                commitBlockToBlockprobe = {this.props.commitBlockToBlockprobe}
+                                lastIndexDraftBlocks = {this.state.lastIndexDraftBlocks}
+                                lastIndex = {this.props.lastIndex}
+                                partsOfImageList = {this.props.partsOfImageList}
+                            />
+                        </div>
                     </TabPanel>
                 </Tabs>
                 </div>
