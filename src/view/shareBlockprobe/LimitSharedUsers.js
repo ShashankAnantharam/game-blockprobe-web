@@ -177,6 +177,14 @@ const Transition = React.forwardRef(function Transition(props, ref) {
         //Change db status here for user limited
         let publicStatus = JSON.parse(JSON.stringify(this.props.publicStatus));
         publicStatus.isUserLimited = event.target.checked;
+        if(isNullOrUndefined(publicStatus.userList) || publicStatus.userList.length==0){
+            publicStatus.userList = [
+                {
+                    id: this.props.uId,
+                    role: "ADMIN"
+                }
+            ];
+        }
         firebase.firestore().collection("publicStatus").doc(this.props.bpId).set(publicStatus);
     }
 
