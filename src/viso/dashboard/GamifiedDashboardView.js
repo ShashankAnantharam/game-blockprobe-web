@@ -15,6 +15,7 @@ import FindConnectionsComponent from "../FindConnectionsComponent";
 import TimelineComponent from "../TimelineComponent";
 import * as Locale from "../../Localization/localizedStrings";
 import { isNullOrUndefined } from 'util';
+import GamifiedPartsOfImageView from '../gamifiedPartsOfImage/gamifiedPartsOfImage';
 
 class GamifiedDashboardViewComponent extends React.Component {
 
@@ -53,6 +54,7 @@ class GamifiedDashboardViewComponent extends React.Component {
       this.isSummaryBlocksAvailable = this.isSummaryBlocksAvailable.bind(this);
       this.isGraphAvailable = this.isGraphAvailable.bind(this);
       this.isTimelineAvailable = this.isTimelineAvailable.bind(this);
+      this.isDissectPictureAvailable = this.isDissectPictureAvailable.bind(this);
       this.showLocalTooltip = this.showLocalTooltip.bind(this);
       this.hideLocalTooltip = this.hideLocalTooltip.bind(this);
       this.handleAdhocTooltipJoyrideCallback = this.handleAdhocTooltipJoyrideCallback.bind(this);
@@ -107,9 +109,16 @@ class GamifiedDashboardViewComponent extends React.Component {
     }
 
     isBlockprobeEmpty(){
-        if(!this.isTimelineAvailable() && !this.isGraphAvailable() && !this.isSummaryBlocksAvailable()){
+        if(!this.isTimelineAvailable() && !this.isGraphAvailable() && 
+        !this.isSummaryBlocksAvailable() && !this.isDissectPictureAvailable()){
             return true;
         }
+        return false;
+    }
+
+    isDissectPictureAvailable(){
+        if(this.props.partsOfImageList && this.props.partsOfImageList.length > 0)
+            return true;
         return false;
     }
 
@@ -137,6 +146,24 @@ class GamifiedDashboardViewComponent extends React.Component {
                                 </IconButton>
                             }        
                 </div>
+
+                {this.isDissectPictureAvailable()?
+                    <div>
+                        <div className="dashboard-section-heading graph-heading">{"Parts of the picture"}</div>
+                        <GamifiedPartsOfImageView
+                            playSound = {this.state.playSound}
+                            bpId={this.props.bpId}
+                            title={this.props.title}
+                            isPublic = {this.props.isPublic}
+                            lang = {this.props.lang}
+                            partsOfImageList={this.props.partsOfImageList}
+                            setScrollToGraphList ={this.props.setScrollToGraphList}
+                        />
+                    </div>
+                    :
+                    null
+                }
+
                 {this.isGraphAvailable()?
                     <div style={{marginBottom: '50px'}}>
                         <div className="dashboard-section-heading graph-heading">{Locale.gameifiedMindMapTooltips.title[lang]}

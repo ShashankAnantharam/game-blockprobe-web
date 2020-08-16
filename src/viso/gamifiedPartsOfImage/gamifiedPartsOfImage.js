@@ -397,15 +397,21 @@ class GamifiedPartsOfImageView extends React.Component {
             <div>
                 {this.state.stopGame || this.state.score==this.state.totalScore?
                     <div>
-                        <GamifiedGraphStats
-                            stats = {this.state.stats}
-                            bpId={this.props.bpId}
-                            title={this.props.title}
-                            canSave = {true}
-                            saveImmediately = {true}
-                            type= {'dissect_picture'}
-                            id={'dissect_picture_result'}
-                            />
+                        {this.props.isPublic?
+                            <div>
+                                <GamifiedGraphStats
+                                    stats = {this.state.stats}
+                                    bpId={this.props.bpId}
+                                    title={this.props.title}
+                                    canSave = {true}
+                                    saveImmediately = {true}
+                                    type= {'dissect_picture'}
+                                    id={'dissect_picture_result'}
+                                    />
+                            </div>
+                            :
+                            null
+                        }                        
                     </div>
                     :
                 <div>   
@@ -413,7 +419,7 @@ class GamifiedPartsOfImageView extends React.Component {
                         {this.state.totalScore>0?
                             <div>
                                 <div className="gameButtonContainer" style={{marginLeft:'1em'}}>
-                                    {!this.state.stopGame?
+                                    {!this.state.stopGame && this.props.isPublic?
                                         <Button
                                         variant="contained" 
                                         className="stopGamebutton"

@@ -1084,6 +1084,7 @@ class ViewBlockprobePrivateComponent extends React.Component {
                         multiSelectEntityList = {this.state.multiSelectEntityList}
                         lang = {this.state.lang}
                         timeline={this.state.timeline}  
+                        partsOfImageList={this.state.partsOfImageList}
                         setNewVisualisation = {this.setNewVisualisation}                   
                     />
                 </div>
