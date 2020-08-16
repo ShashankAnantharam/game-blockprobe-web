@@ -1440,7 +1440,7 @@ class UserBlocksComponent extends React.Component {
                     <TabList>
                         <Tab>Mindmap</Tab>
                         <Tab>Timeline</Tab>
-                        <Tab>Dissect</Tab>
+                        <Tab>Picture-Parts</Tab>
                     </TabList>
 
                     <TabPanel>
