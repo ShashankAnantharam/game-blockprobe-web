@@ -1,0 +1,55 @@
+.leftMargin-1em{
+    margin-left:1em;
+}
+
+.addPicturePartButton{
+    background:rgb(2, 1, 46) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-right:1em !important;
+    margin-top:10px !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.addPicturePartButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.savePicturePartButton{
+    background:rgb(1, 46, 27) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-right:1em !important;
+    margin-top:10px !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.savePicturePartButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.editPicturePartImageButton{
+    background:rgb(46, 1, 46) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-right:1em !important;
+    margin-top:10px !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.editPicturePartImageButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}
+
+.deletePicturePartButton{
+    background:rgb(151, 4, 4) !important;
+    color:rgb(219, 243, 242) !important;
+    margin-right:1em !important;
+    margin-top:10px !important;
+    size:2.6em !important;
+    border:none;
+}
+
+.deletePicturePartButton:hover{
+    box-shadow: 2px 2px 10px 2px rgb(95, 95, 95);
+}

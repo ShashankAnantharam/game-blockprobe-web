@@ -1,0 +1,63 @@
+.imageDissectContainer{
+    margin-left: 1em;
+    position: relative;
+}
+
+.imageToDissect{
+    max-width: 70vw; 
+    max-height: 75vh; 
+    border: 1px solid black;
+  }
+
+.lineS{
+    border-radius: 30px;
+    opacity: 0.75;
+}
+
+.colored_circle_dissectPicture{
+    background: rgb(4, 83, 119) !important;
+    width: 25px !important;
+    height: 25px !important;
+}
+
+.circle_dissectPicture{
+    width: 16px;
+    height: 16px;
+    transition: 0.2s;
+    background: white;
+}
+
+.circle_dissectPicture:hover{
+    width: 30px;
+    height: 30px;
+    background: rgb(3, 168, 245)
+}
+
+.circle_dissectPicture_clickable{
+    cursor: pointer;
+}
+
+.rectangle_dissectPicture{
+    width: 5px;
+    height: 5px;
+    transition: 0.2s;
+    background: rgb(102, 0, 102);
+}
+
+.rectangle_dissectPicture:hover{
+    width: 7px;
+    height: 7px;
+    background: rgb(163, 20, 20)
+}
+
+.shape_transparent{
+    opacity:0.3;
+}
+
+.rectangle_dissectPicture_clickable{
+    cursor: pointer;
+}
+
+.imageToDissect_addBlock{
+    opacity: 0.5;
+}
