@@ -294,7 +294,7 @@ class AddDissectPictureView extends React.Component {
                                                 variant="outlined"
                                                 value={this.state.title}
                                                 onChange={(e) => { this.handleChange(e,"title")}}
-                                                label = "Name of part"
+                                                label = "Name of the part"
                                                 multiline
                                                 rowsMax="2"
                                                 rows="1"
@@ -313,7 +313,7 @@ class AddDissectPictureView extends React.Component {
                                                 variant="outlined"
                                                 value={this.state.summary}
                                                 onChange={(e) => { this.handleChange(e,"description")}}
-                                                label = "Function of part"
+                                                label = "Description"
                                                 multiline
                                                 rowsMax="3"
                                                 rows="2"
