@@ -266,7 +266,8 @@ class AddDissectPictureView extends React.Component {
                                 </Button>
                             </div> 
 
-                            {!isNullOrUndefined(this.state.imageUrl) && !this.state.isEdit?
+                            {!isNullOrUndefined(this.state.imageUrl) && 
+                            !(this.state.isEdit || this.state.addConnection)?
                                 <div>
                                     <Button
                                         variant="contained" 
